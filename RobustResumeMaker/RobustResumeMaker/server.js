@@ -23,7 +23,7 @@ var router = express.Router;
 // configuration ===========================================
 
 // config files
-var port = process.env.PORT || 8080; // set our port
+ var port1 = process.env.PORT || 8080; // set our port
 var db = require('./config/db');
 
 // connect to our mongoDB database (commented out after you enter in your own credentials)
@@ -43,7 +43,7 @@ require('./app/route')(app); // pass our application into our routes
 
 // start app ===============================================
 app.listen(port);
-//console.log('Magic happens on port ' + port); 			// shoutout to the user
+console.log('Magic happens on port ' + port); 			// shoutout to the user
 exports = module.exports = app; 				    		// expose app
 
 //http.createServer(function (req, res) {
@@ -54,26 +54,26 @@ exports = module.exports = app; 				    		// expose app
 //////////////////////////////////////////////////////////////
 // Create your API server
 http.createServer(function (req, response) {
-    
+
     // Make sure the browser isn't requesting a /favicon.ico
     if (req.url != '/favicon.ico') {
-        
+
         // Check to see if authorization for end user has already been made and skip Oauth dance
         var cookies = {};
         req.headers.cookie && req.headers.cookie.split(';').forEach(function (cookie) {
             var parts = cookie.split('=');
             cookies[ parts[ 0 ].trim() ] = (parts[ 1 ] || '').trim();
         });
-        
+
         // If we have the access_token in the cookie skip the Oauth Dance and go straight to Step 3
         if (cookies['LIAccess_token']) {
             // STEP 3 - Get LinkedIn API Data
             // console.log("we have the cookie value" + cookies['LIAccess_token']);
             OauthStep3(req, response, cookies['LIAccess_token'], APICalls['peopleSearchWithKeywords']);
-		
+
         } else {
             var queryObject = url.parse(req.url, true).query;
-            
+
             if (!queryObject.code) {
                 // STEP 1 - If this is the first run send them to LinkedIn for Auth
                 OauthStep1(req, response);
@@ -85,19 +85,19 @@ http.createServer(function (req, response) {
     }
 
 // Ensure your server's listening port matches your callbackURL port on Line 11 above
-}).listen(8080);
+}).listen(port1);
 console.log('Visit http://127.0.0.1:1337/ in your browser to test the LinkedIn Oauth2 API Authentication');
 
 var RandomState = function (howLong) {
-    
+
     howLong = parseInt(howLong);
-    
+
     if (!howLong || howLong <= 0) {
         howLong = 18;
     }
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_";
-    
+
     for (var i = 0; i < howLong; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     }
@@ -107,9 +107,9 @@ var RandomState = function (howLong) {
 //////////////////////////////////////////////////////////////
 // Oauth Step 1 - Redirect end-user for authorization
 var OauthStep1 = function (req, response) {
-    
+
     console.log("Step1");
-    
+
     response.writeHead(302, {
         'Location': 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=' + APIKey + '&scope=' + APIScope + '&state=RNDM_' + RandomState(18) + '&redirect_uri=' + callbackURL
     });
@@ -119,38 +119,38 @@ var OauthStep1 = function (req, response) {
 //////////////////////////////////////////////////////////////
 // Oauth Step 2 - The callback post authorization
 var OauthStep2 = function (request, response, code) {
-    
+
     console.log("Step2");
-    
+
     var options = {
         host: 'api.linkedin.com',
         port: 443,
         path: "/uas/oauth2/accessToken?grant_type=authorization_code&code=" + code + "&redirect_uri=" + callbackURL + "&client_id=" + APIKey + "&client_secret=" + APIKeySecret
     };
-    
+
     var req = https.request(options, function (res) {
         console.log("statusCode: ", res.statusCode);
         console.log("headers: ", res.headers);
-        
+
         res.on('data', function (d) {
             // STEP 3 - Get LinkedIn API Data
-            // We have successfully completed Oauth and have received our access_token.  Congrats! 
+            // We have successfully completed Oauth and have received our access_token.  Congrats!
             // Now let's make a real API call (Example API call referencing APICalls['peopleSearchWithKeywords'] below)
             // See more example API Calls at the end of this file
-            
+
             access_token = JSON.parse(d).access_token;
-            
+
             var ExpiresIn29days = new Date();
             var in30days = new Date();
             ExpiresIn29days.setDate(in30days.getDate() + 29);
             response.writeHead(200, {
                 'Set-Cookie': 'LIAccess_token=' + access_token + '; Expires=' + ExpiresIn29days
             });
-            
+
             OauthStep3(request, response, access_token, APICalls['myProfile'], APICalls['myConnections']);
         });
     });
-    
+
     req.on('error', function (e) {
         console.error("There was an error with our Oauth Call in Step 2: " + e);
         response.end("There was an error with our Oauth Call in Step 2");
@@ -161,25 +161,25 @@ var OauthStep2 = function (request, response, code) {
 // Oauth Step 3 - Now you can make a real API call
 // Get some real LinkedIn data below
 var OauthStep3 = function (request, response, access_token, APICall, callback) {
-    
+
     console.log("Step3");
-    
+
     if (APICall.indexOf("?") >= 0) {
         var JSONformat = "&format=json";
     } else {
         var JSONformat = "?format=json";
     }
-    
+
     var options = {
         host: 'api.linkedin.com',
         port: 443,
         path: '/' + APIVersion + '/' + APICall + JSONformat + "&oauth2_access_token=" + access_token
     };
-    
+
     var req = https.request(options, function (res) {
         console.log("statusCode: ", res.statusCode);
         console.log("headers: ", res.headers);
-        
+
         res.on('data', function (d) {
             // We have LinkedIn data!  Process it and continue with your application here
             // apiResponse =JSON.parse(d)
@@ -188,7 +188,7 @@ var OauthStep3 = function (request, response, access_token, APICall, callback) {
 				// YOUR NEXT STEP HERE
         });
     });
-    
+
     req.on('error', function (e) {
         console.error("There was an error with our LinkedIn API Call in Step 3: " + e);
         response.end("There was an error with our LinkedIn API Call in Step 3");

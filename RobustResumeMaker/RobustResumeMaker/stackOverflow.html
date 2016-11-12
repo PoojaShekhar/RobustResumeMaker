@@ -1,0 +1,126 @@
+<!-- stackOverflow.html -->
+<html>
+	<head>
+
+<title> Javascript SDK  - Stack Exchange API TEST</title>
+<link rel="stylesheet" href="https://cdn.sstatic.net/apiv2/all.css?v=78c7298195fd">
+
+<script type="text/javascript" src="https://api.stackexchange.com/js/2.0/all.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.sstatic.net/apiv2/js/prettify.js?v=38e736b8e1ab"></script>
+
+
+<!-- <script type="text/javascript">
+$(function(){
+    var scriptLoc = 'https://api.stackexchange.com/js/2.0/all.js';
+
+    if (window.location.protocol == "https:" ) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = scriptLoc;
+
+        document.getElementsByTagName('head')[0].appendChild(script)
+    }else{
+        window.SE = { init: function(){}, authenticate: function(){} };
+    }
+});
+</script> -->
+
+
+<!-- <script type="text/javascript">
+$(function () { prettyPrint(); });
+
+$(function() {
+if (window.location.protocol != 'https:') {
+	    $('.https-only').empty().append('<p>For simplicity, this example only runs under HTTPS.<br>Conditionally switch your <strong>channelUrl</strong> based on protocol to run under both HTTP and HTTPS</p>').append('<h2><a href="' + window.location.toString().replace(window.location.protocol, 'https:') + '">Switch to HTTPS</a></h2>');
+	}
+}
+);
+
+</script> -->
+
+<script type='text/javascript'>
+$(function(){
+// Initialize library
+
+	// SE = { 
+	// 	init: function(){}, 
+	// 	authenticate: function(){} 
+	// };
+
+	SE.init({
+		clientId: 8363,
+		key: 'QZM9sJ9hrP4Fj1a3GF4FzQ((', // Used for cross domain communication, it will be validated
+	    channelUrl: 'localhost',
+	    complete: function(data) { // Called when all initialization is finished
+	        $('#login-btn')
+	            // .removeAttr('disabled')
+	            .text('Run Example With Version '+data.version); 
+	    }
+	});	
+
+	$('#login-btn').click(function() {
+		alert("Simple message is executed");
+		SE.authenticate({
+	        success: function(data) { 
+	            alert(
+	                'User Authorized with account id = ' + 
+	                data.networkUsers[0].account_id + ', got access token = ' + 
+	                data.accessToken
+	            ); 
+	        },
+	        error: function(data) { 
+	            alert('An error occurred:\n' + data.errorName + '\n' + data.errorMessage); 
+	        },
+	        networkUsers: true
+	    });
+	});
+});
+
+// SE.init({ 
+//     // Parameters obtained by registering an app, these are specific to the SE
+//     //   documentation site
+//     clientId: 1, 
+//     key: 'U4DMV*8nvpm3EOpvf69Rxw((', // Used for cross domain communication, it will be validated
+//     channelUrl: 'https://api.stackexchange.com/docs/proxy',
+//     complete: function(data) { // Called when all initialization is finished
+//         $('#login-btn')
+//             .removeAttr('disabled')
+//             .text('Run Example With Version '+data.version); 
+//     }
+// });
+
+// // Attach click handler to login button
+// $('#login-btn').click(function() {
+
+//     // Make the authentication call, note that being in an onclick handler
+//     //   is important; most browsers will hide windows opened without a
+//     //   'click blessing'
+    
+//     // alert("This is a message");
+
+//     SE.authenticate({
+//         success: function(data) { 
+//             alert(
+//                 'User Authorized with account id = ' + 
+//                 data.networkUsers[0].account_id + ', got access token = ' + 
+//                 data.accessToken
+//             ); 
+//         },
+//         error: function(data) { 
+//             alert('An error occurred:\n' + data.errorName + '\n' + data.errorMessage); 
+//         },
+//         networkUsers: true
+//     });
+// });
+
+// });
+
+</script>
+
+
+	</head>
+	<body>
+		<button id="login-btn">Testing Stack login</button>
+	</body>
+</html>

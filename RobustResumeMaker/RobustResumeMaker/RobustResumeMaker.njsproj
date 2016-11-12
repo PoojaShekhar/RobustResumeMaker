@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>RobustResumeMaker</Name>
+    <RootNamespace>RobustResumeMaker</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>eb49e961-d27f-4ff8-84f8-68dc221239a7</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>server.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="config\db.js" />
+    <Compile Include="html\assets\custom\js\custom.js" />
+    <Compile Include="html\assets\vendor\anicounter\jquery.counterup.min.js" />
+    <Compile Include="html\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Compile Include="html\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Compile Include="html\assets\vendor\bootstrap\js\npm.js" />
+    <Compile Include="html\assets\vendor\circle-progress\circle-progress.js" />
+    <Compile Include="html\assets\vendor\imagesloaded\js\imagesloaded.pkgd.min.js" />
+    <Compile Include="html\assets\vendor\isotope\js\isotope.pkgd.min.js" />
+    <Compile Include="html\assets\vendor\jquery\js\jquery-1.12.0.min.js" />
+    <Compile Include="html\assets\vendor\jquery\js\jquery-2.1.4.js" />
+    <Compile Include="html\assets\vendor\jquery\js\jquery-2.2.0.min.js" />
+    <Compile Include="html\assets\vendor\mfp\js\jquery.magnific-popup.min.js" />
+    <Compile Include="html\assets\vendor\pjax\jquery.pjax.js" />
+    <Compile Include="html\assets\vendor\progresstracker\js\jquery.progresstracker.js" />
+    <Compile Include="html\assets\vendor\progresstracker\js\jquery.progresstracker.min.js" />
+    <Compile Include="html\assets\vendor\styleselector\styleselector.js" />
+    <Compile Include="html\assets\vendor\waypoints\waypoints.min.js" />
+    <Compile Include="html\assets\vendor\wow\wow.min.js" />
+    <Compile Include="server.js" />
+    <Content Include="html\assets\custom\css\blue.css" />
+    <Content Include="html\assets\custom\css\default.css" />
+    <Content Include="html\assets\custom\css\green.css" />
+    <Content Include="html\assets\custom\css\greyscale.css" />
+    <Content Include="html\assets\custom\css\light.css" />
+    <Content Include="html\assets\custom\css\morning.css" />
+    <Content Include="html\assets\custom\css\pastel.css" />
+    <Content Include="html\assets\custom\css\red.css" />
+    <Content Include="html\assets\custom\css\style.css" />
+    <Content Include="html\assets\custom\css\style.css.map" />
+    <Content Include="html\assets\custom\images\backgrounds\black_twill.png" />
+    <Content Include="html\assets\custom\images\backgrounds\bo_play_pattern.png" />
+    <Content Include="html\assets\custom\images\backgrounds\brick080.jpg" />
+    <Content Include="html\assets\custom\images\backgrounds\brickwall.png" />
+    <Content Include="html\assets\custom\images\backgrounds\brushed_alu_dark.png" />
+    <Content Include="html\assets\custom\images\backgrounds\carbon_fibre.png" />
+    <Content Include="html\assets\custom\images\backgrounds\carbon_fibre_v2.png" />
+    <Content Include="html\assets\custom\images\backgrounds\dark_fabric.png" />
+    <Content Include="html\assets\custom\images\backgrounds\dark_fish_skin.png" />
+    <Content Include="html\assets\custom\images\backgrounds\dark_matter.png" />
+    <Content Include="html\assets\custom\images\backgrounds\dark_wood.png" />
+    <Content Include="html\assets\custom\images\backgrounds\ecailles.png" />
+    <Content Include="html\assets\custom\images\backgrounds\escheresque_ste.png" />
+    <Content Include="html\assets\custom\images\backgrounds\fabric_of_squares_gray.png" />
+    <Content Include="html\assets\custom\images\backgrounds\footer_lodyas.png" />
+    <Content Include="html\assets\custom\images\backgrounds\geometry2.png" />
+    <Content Include="html\assets\custom\images\backgrounds\grey_wash_wall.png" />
+    <Content Include="html\assets\custom\images\backgrounds\inflicted.png" />
+    <Content Include="html\assets\custom\images\backgrounds\knit.png" />
+    <Content Include="html\assets\custom\images\backgrounds\knitting250px.png" />
+    <Content Include="html\assets\custom\images\backgrounds\leather.png" />
+    <Content Include="html\assets\custom\images\backgrounds\lghtmesh.png" />
+    <Content Include="html\assets\custom\images\backgrounds\navy_blue.png" />
+    <Content Include="html\assets\custom\images\backgrounds\px_by_Gre3g.png" />
+    <Content Include="html\assets\custom\images\backgrounds\random_grey_variations.png" />
+    <Content Include="html\assets\custom\images\backgrounds\retina_wood.png" />
+    <Content Include="html\assets\custom\images\backgrounds\shattered.png" />
+    <Content Include="html\assets\custom\images\backgrounds\symphony.png" />
+    <Content Include="html\assets\custom\images\backgrounds\tex2res4.png" />
+    <Content Include="html\assets\custom\images\backgrounds\tileable_wood_texture.png" />
+    <Content Include="html\assets\custom\images\backgrounds\triangular.png" />
+    <Content Include="html\assets\custom\images\backgrounds\tweed.png" />
+    <Content Include="html\assets\custom\images\backgrounds\wood143.jpg" />
+    <Content Include="html\assets\custom\images\backgrounds\woven.png" />
+    <Content Include="html\assets\custom\images\back_top.png" />
+    <Content Include="html\assets\custom\images\blog\01.jpg" />
+    <Content Include="html\assets\custom\images\blog\02.jpg" />
+    <Content Include="html\assets\custom\images\blog\03.jpg" />
+    <Content Include="html\assets\custom\images\blog\04.jpg" />
+    <Content Include="html\assets\custom\images\blog\05.jpg" />
+    <Content Include="html\assets\custom\images\blog\06.jpg" />
+    <Content Include="html\assets\custom\images\blog\07.jpg" />
+    <Content Include="html\assets\custom\images\blog\08.jpg" />
+    <Content Include="html\assets\custom\images\blog\thumbs\01.jpg" />
+    <Content Include="html\assets\custom\images\blog\thumbs\02.jpg" />
+    <Content Include="html\assets\custom\images\blog\thumbs\03.jpg" />
+    <Content Include="html\assets\custom\images\blog\thumbs\04.jpg" />
+    <Content Include="html\assets\custom\images\blog\thumbs\05.jpg" />
+    <Content Include="html\assets\custom\images\blog\thumbs\06.jpg" />
+    <Content Include="html\assets\custom\images\blog\thumbs\07.jpg" />
+    <Content Include="html\assets\custom\images\blog\thumbs\08.jpg" />
+    <Content Include="html\assets\custom\images\grayscale.svg" />
+    <Content Include="html\assets\custom\images\init01.png" />
+    <Content Include="html\assets\custom\images\init02.png" />
+    <Content Include="html\assets\custom\images\init03.png" />
+    <Content Include="html\assets\custom\images\init04.png" />
+    <Content Include="html\assets\custom\images\initial\01.jpg" />
+    <Content Include="html\assets\custom\images\initial\02.jpg" />
+    <Content Include="html\assets\custom\images\initial\03.jpg" />
+    <Content Include="html\assets\custom\images\initial\04.jpg" />
+    <Content Include="html\assets\custom\images\initial\05.jpg" />
+    <Content Include="html\assets\custom\images\initial\06.jpg" />
+    <Content Include="html\assets\custom\images\initial\07.jpg" />
+    <Content Include="html\assets\custom\images\initial\08.jpg" />
+    <Content Include="html\assets\custom\images\initial\bg-01.jpg" />
+    <Content Include="html\assets\custom\images\initial\color-bg.png" />
+    <Content Include="html\assets\custom\images\magazine\00.jpg" />
+    <Content Include="html\assets\custom\images\magazine\01.jpg" />
+    <Content Include="html\assets\custom\images\magazine\02.jpg" />
+    <Content Include="html\assets\custom\images\magazine\03.jpg" />
+    <Content Include="html\assets\custom\images\magazine\04.jpg" />
+    <Content Include="html\assets\custom\images\magazine\05.jpg" />
+    <Content Include="html\assets\custom\images\magazine\06.jpg" />
+    <Content Include="html\assets\custom\images\magazine\07.jpg" />
+    <Content Include="html\assets\custom\images\magazine\08.jpg" />
+    <Content Include="html\assets\custom\images\magazine\thumbs\00.jpg" />
+    <Content Include="html\assets\custom\images\magazine\thumbs\01.jpg" />
+    <Content Include="html\assets\custom\images\magazine\thumbs\02.jpg" />
+    <Content Include="html\assets\custom\images\magazine\thumbs\03.jpg" />
+    <Content Include="html\assets\custom\images\magazine\thumbs\04.jpg" />
+    <Content Include="html\assets\custom\images\magazine\thumbs\05.jpg" />
+    <Content Include="html\assets\custom\images\magazine\thumbs\06.jpg" />
+    <Content Include="html\assets\custom\images\magazine\thumbs\07.jpg" />
+    <Content Include="html\assets\custom\images\magazine\thumbs\08.jpg" />
+    <Content Include="html\assets\custom\images\menu-trans.png" />
+    <Content Include="html\assets\custom\images\partners_01.png" />
+    <Content Include="html\assets\custom\images\partners_02.png" />
+    <Content Include="html\assets\custom\images\partners_03.png" />
+    <Content Include="html\assets\custom\images\partners_04.png" />
+    <Content Include="html\assets\custom\images\partners_05.png" />
+    <Content Include="html\assets\custom\images\partners_06.png" />
+    <Content Include="html\assets\custom\images\partners_07.png" />
+    <Content Include="html\assets\custom\images\partners_08.png" />
+    <Content Include="html\assets\custom\images\partners_09.png" />
+    <Content Include="html\assets\custom\images\partners_10.png" />
+    <Content Include="html\assets\custom\images\partners_11.png" />
+    <Content Include="html\assets\custom\images\partners_12.png" />
+    <Content Include="html\assets\custom\images\photo.jpg" />
+    <Content Include="html\assets\custom\images\preloader.gif" />
+    <Content Include="html\assets\custom\images\quote.png" />
+    <Content Include="html\assets\custom\images\styleselector-promo\fletcher-html.jpg" />
+    <Content Include="html\assets\custom\images\styleselector-promo\gridus-html.jpg" />
+    <Content Include="html\assets\custom\images\styleselector-promo\method-html.jpg" />
+    <Content Include="html\assets\custom\images\timeline-1-01.jpg" />
+    <Content Include="html\assets\custom\images\timeline-2-01.jpg" />
+    <Content Include="html\assets\custom\images\timeline-3-01.jpg" />
+    <Content Include="html\assets\custom\images\timeline-4-01.jpg" />
+    <Content Include="html\assets\custom\images\userpic01.jpg" />
+    <Content Include="html\assets\custom\images\userpic02.jpg" />
+    <Content Include="html\assets\custom\images\userpic03.jpg" />
+    <Content Include="html\assets\custom\images\userpic04.jpg" />
+    <Content Include="html\assets\custom\images\userpic05.jpg" />
+    <Content Include="html\assets\custom\php\form.php" />
+    <Content Include="html\assets\custom\scss\basic.scss" />
+    <Content Include="html\assets\custom\scss\buttons.scss" />
+    <Content Include="html\assets\custom\scss\colors.scss" />
+    <Content Include="html\assets\custom\scss\mediaquery.scss" />
+    <Content Include="html\assets\custom\scss\style.scss" />
+    <Content Include="html\assets\custom\scss\typography.scss" />
+    <Content Include="html\assets\custom\scss\ui-01-default.scss" />
+    <Content Include="html\assets\custom\scss\ui-02-greyscale.scss" />
+    <Content Include="html\assets\custom\scss\ui-03-pastel.scss" />
+    <Content Include="html\assets\custom\scss\ui-04-morning.scss" />
+    <Content Include="html\assets\custom\scss\ui-05-light.scss" />
+    <Content Include="html\assets\custom\scss\ui-06-green.scss" />
+    <Content Include="html\assets\custom\scss\ui-07-red.scss" />
+    <Content Include="html\assets\custom\scss\ui-08-blue.scss" />
+    <Content Include="html\assets\vendor\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="html\assets\vendor\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="html\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="html\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="html\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="html\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="html\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="html\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="html\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="html\assets\vendor\feedbackform\php\contact.php" />
+    <Content Include="html\assets\vendor\flaticons\flaticon.css" />
+    <Content Include="html\assets\vendor\flaticons\flaticon.eot" />
+    <Content Include="html\assets\vendor\flaticons\flaticon.html" />
+    <Content Include="html\assets\vendor\flaticons\flaticon.svg" />
+    <Content Include="html\assets\vendor\flaticons\flaticon.ttf" />
+    <Content Include="html\assets\vendor\flaticons\flaticon.woff" />
+    <Content Include="html\assets\vendor\flaticons\license.txt" />
+    <Content Include="html\assets\vendor\flaticons\_flaticon.scss" />
+    <Content Include="html\assets\vendor\fontawesome\css\font-awesome.min.css" />
+    <Content Include="html\assets\vendor\fontawesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="html\assets\vendor\fontawesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="html\assets\vendor\fontawesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="html\assets\vendor\fontawesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="html\assets\vendor\fontawesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="html\assets\vendor\fontawesome\fonts\FontAwesome.otf" />
+    <Content Include="html\assets\vendor\hover\css\demo-page.css" />
+    <Content Include="html\assets\vendor\hover\css\hover-min.css" />
+    <Content Include="html\assets\vendor\hover\css\hover.css" />
+    <Content Include="html\assets\vendor\mfp\css\magnific-popup.css" />
+    <Content Include="html\assets\vendor\mfp\css\magnific-popup.min.css" />
+    <Content Include="html\assets\vendor\progresstracker\css\demo.css" />
+    <Content Include="html\assets\vendor\progresstracker\css\jquery.progresstracker.css" />
+    <Content Include="html\assets\vendor\styleselector\styleselector.css" />
+    <Content Include="html\assets\vendor\wow\animate.css" />
+    <Content Include="html\blog.html" />
+    <Content Include="html\blogpost.html" />
+    <Content Include="html\contacts.html" />
+    <Content Include="html\feedback.html" />
+    <Content Include="html\home.html" />
+    <Content Include="html\index.html" />
+    <Content Include="html\portfolio.html" />
+    <Content Include="html\resume.html" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="config\" />
+    <Folder Include="html\" />
+    <Folder Include="html\assets\" />
+    <Folder Include="html\assets\custom\" />
+    <Folder Include="html\assets\custom\css\" />
+    <Folder Include="html\assets\custom\images\" />
+    <Folder Include="html\assets\custom\images\backgrounds\" />
+    <Folder Include="html\assets\custom\images\blog\" />
+    <Folder Include="html\assets\custom\images\blog\thumbs\" />
+    <Folder Include="html\assets\custom\images\initial\" />
+    <Folder Include="html\assets\custom\images\magazine\" />
+    <Folder Include="html\assets\custom\images\magazine\thumbs\" />
+    <Folder Include="html\assets\custom\images\styleselector-promo\" />
+    <Folder Include="html\assets\custom\js\" />
+    <Folder Include="html\assets\custom\php\" />
+    <Folder Include="html\assets\custom\scss\" />
+    <Folder Include="html\assets\vendor\" />
+    <Folder Include="html\assets\vendor\anicounter\" />
+    <Folder Include="html\assets\vendor\bootstrap\" />
+    <Folder Include="html\assets\vendor\bootstrap\css\" />
+    <Folder Include="html\assets\vendor\bootstrap\fonts\" />
+    <Folder Include="html\assets\vendor\bootstrap\js\" />
+    <Folder Include="html\assets\vendor\circle-progress\" />
+    <Folder Include="html\assets\vendor\feedbackform\" />
+    <Folder Include="html\assets\vendor\feedbackform\php\" />
+    <Folder Include="html\assets\vendor\flaticons\" />
+    <Folder Include="html\assets\vendor\fontawesome\" />
+    <Folder Include="html\assets\vendor\fontawesome\css\" />
+    <Folder Include="html\assets\vendor\fontawesome\fonts\" />
+    <Folder Include="html\assets\vendor\hover\" />
+    <Folder Include="html\assets\vendor\hover\css\" />
+    <Folder Include="html\assets\vendor\imagesloaded\" />
+    <Folder Include="html\assets\vendor\imagesloaded\js\" />
+    <Folder Include="html\assets\vendor\isotope\" />
+    <Folder Include="html\assets\vendor\isotope\js\" />
+    <Folder Include="html\assets\vendor\jquery\" />
+    <Folder Include="html\assets\vendor\jquery\js\" />
+    <Folder Include="html\assets\vendor\mfp\" />
+    <Folder Include="html\assets\vendor\mfp\css\" />
+    <Folder Include="html\assets\vendor\mfp\js\" />
+    <Folder Include="html\assets\vendor\pjax\" />
+    <Folder Include="html\assets\vendor\progresstracker\" />
+    <Folder Include="html\assets\vendor\progresstracker\css\" />
+    <Folder Include="html\assets\vendor\progresstracker\js\" />
+    <Folder Include="html\assets\vendor\styleselector\" />
+    <Folder Include="html\assets\vendor\waypoints\" />
+    <Folder Include="html\assets\vendor\wow\" />
+    <Folder Include="obj\" />
+    <Folder Include="obj\Debug\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

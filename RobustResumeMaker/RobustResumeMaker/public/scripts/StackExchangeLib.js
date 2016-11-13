@@ -50,8 +50,16 @@ function seUserTopTagsCallback(){
 
     var jsonTags = "["
     var tags = response["items"]
+    var i = 0
+    for(i = 0; tags.length -1; i++){
+    	jsonTags += "{'name':" + tags[i]["name"] + ",'count':" + tags[i]["count"] +"},"
+    }
+    jsonTags += "{'name':" + tags[i]["name"] + ",'count':" + tags[i]["count"] +"}]"
 
-
+    var test = JSON.parse(jsonTags)
+    for(tag in test){
+    	console.log(">>> TAG: " + tag["name"] + " COUNT: " + tag["count"])
+    }
 }
 
  // function stackCallback(){

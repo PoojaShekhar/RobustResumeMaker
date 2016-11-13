@@ -12,7 +12,14 @@ var url = require('url');
 // Change your API keys received from developer.linkedin.com below
 var APIKey = "788mmi3lsbxzk2";
 var APIKeySecret = "Xs7PLi0gQ9vvSJs3";
-var callbackURL = "http://localhost:8080/auth/linkedin";
+
+var port1 = process.env.PORT || 8080; // set our port
+
+// #HOSTING, this was host in cloudlab, please change it
+var host = "cp-1.njstest.nosql-json-pg0.utah.cloudlab.us"
+console.log(">>> Hosting application in: " + host);
+
+var callbackURL = "http://" + host + ":" + port1 + "/auth/linkedin";
 var APIVersion = "v1";
 
 // These are all of the scope variables. Remove them based on your needs
@@ -23,7 +30,7 @@ var router = express.Router;
 // configuration ===========================================
 
 // config files
- var port1 = process.env.PORT || 8080; // set our port
+ 
 var db = require('./config/db');
 
 // connect to our mongoDB database (commented out after you enter in your own credentials)

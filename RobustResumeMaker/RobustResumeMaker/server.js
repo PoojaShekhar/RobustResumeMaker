@@ -16,7 +16,8 @@ var APIKeySecret = "Xs7PLi0gQ9vvSJs3";
 var port1 = process.env.PORT || 8080; // set our port
 
 // #HOSTING, this was host in cloudlab, please change it
-var host = "cp-1.njstest.nosql-json-pg0.utah.cloudlab.us"
+// var host = "cp-1.njstest.nosql-json-pg0.utah.cloudlab.us"
+var host = "localhost"
 console.log(">>> Hosting application in: " + host);
 
 var callbackURL = "http://" + host + ":" + port1 + "/auth/linkedin";

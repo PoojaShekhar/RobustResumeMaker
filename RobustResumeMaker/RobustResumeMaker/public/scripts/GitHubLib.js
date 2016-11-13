@@ -40,7 +40,6 @@ function  getFirstName() {
 
 function find(){
     var query = window.location.search.substring(1);
-    alert(query);
     if (query!=''){
         var vars = query.split("&");
         for (var i=0;i<vars.length;i++) {
@@ -61,9 +60,6 @@ function find(){
 
         getResponseFromGitHub(info1);
         getResponseFromStackExchange(info2);
-    }
-    else{
-        getFirstName();
     }
 
 }

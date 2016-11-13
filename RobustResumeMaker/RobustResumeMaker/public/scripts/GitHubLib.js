@@ -57,10 +57,9 @@ function find(){
 
         alert(info1, info2);
 
-
-
         document.getElementById("userDR").style.display = 'block';
         document.getElementById("tellUsMore").style.display = 'none';
+        document.getElementById("qr").style.display = 'none';
 
 
         getResponseFromGitHub(info1);

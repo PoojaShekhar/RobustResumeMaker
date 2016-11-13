@@ -36,10 +36,10 @@
       <file leaf-file-name="GitHubLib.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/GitHubLib.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="2112">
+              <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
               <folding>
-                <marker date="1479077740023" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
+                <marker date="1479077872535" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
               </folding>
             </state>
           </provider>
@@ -288,12 +288,12 @@
       <workItem from="1478974962066" duration="6655000" />
       <workItem from="1478987017497" duration="8019000" />
       <workItem from="1479053428736" duration="409000" />
-      <workItem from="1479054612842" duration="19981000" />
+      <workItem from="1479054612842" duration="20118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35064000" />
+    <option name="totallyTimeSpent" value="35201000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2324" y="-2576" width="3232" height="2492" extended-state="6" />
@@ -346,7 +346,7 @@
         <state relative-caret-position="792">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <marker date="1479077740023" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
+            <marker date="1479077872535" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
           </folding>
         </state>
       </provider>
@@ -388,7 +388,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479077740023" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
+            <marker date="1479077872535" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
           </folding>
         </state>
       </provider>
@@ -422,7 +422,7 @@
         <state relative-caret-position="396">
           <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
           <folding>
-            <marker date="1479077740023" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
+            <marker date="1479077872535" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
           </folding>
         </state>
       </provider>
@@ -532,10 +532,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/GitHubLib.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="2112">
+          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
           <folding>
-            <marker date="1479077740023" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
+            <marker date="1479077872535" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
           </folding>
         </state>
       </provider>

@@ -1,22 +1,15 @@
 /**
  * Created by monica on 11/12/16.
  */
-var functionality = "";
+
 function reqListener(){
      var response = JSON.parse(this.responseText);
     console.log(response);
-    if (functionality=="post name"){
 
         document.getElementById("ghUserInfo").innerHTML = response["name"];
         document.getElementById("userloc").innerHTML = response["location"];
-    }
-    if (functionality=="social"){
-        for (i = 0; i < response.length; i++) {
-            document.getElementById("ghUserInfo").innerHTML = document.getElementById("ghUserInfo").innerHTML +response[i]["name"];
-        }
-    }
 
-    //getresponse(response["subscriptions_url"]);
+        getrepos(response["subscriptions_url"]);
  }
 
 function  getFirstName() {
@@ -24,7 +17,6 @@ function  getFirstName() {
     var ghUserID = document.getElementById("ghUserID").value;
     var soUserID = document.getElementById("soUserID").value;
 
-    functionality = "post name";
     getResponseFromGitHub(ghUserID);
     getResponseFromStackExchange(soUserID);
     //getResponseFromGitHub(userID+"/subscriptions");
@@ -44,4 +36,26 @@ function getResponseFromGitHub (info){
 }
 
 function getResponseFromStackExchange (info){
+}
+
+
+function getrepos(reposURL){
+    var request = new XMLHttpRequest();
+    // Initialize a request
+    request.addEventListener("load", repoListener);
+    request.open('get', reposURL, true);
+
+    // Send it
+    request.send();
+}
+
+function repoListener(){
+    var response = JSON.parse(this.responseText);
+    console.log(response);
+    var string = ""
+    for (i = 0; i < response.length; i++) {
+        string = string + "<a href=\"" + response[i]["html_url"] + "\">" + response[i]["name"] + "</a>"+ "</br>";
+    }
+
+    document.getElementById("repoInfo").innerHTML = string
 }

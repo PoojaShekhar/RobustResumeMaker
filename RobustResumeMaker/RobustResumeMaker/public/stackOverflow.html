@@ -72,22 +72,33 @@ $(function(){
 	//     }
 	// });	
 
-	var host = "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:" + 1337
+	// var host = "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:" + 1337
+	var host = "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us" 
 	SE.init({
 		clientId: 8363,
 		key: 'QZM9sJ9hrP4Fj1a3GF4FzQ((', // Used for cross domain communication, it will be validated
 	    channelUrl: host + '/public/blank.html',
 	    complete: function(data) { // Called when all initialization is finished
 	        console.log(data)
+	        successStack(data)
 	        $('#login-btn')
 	            .removeAttr('disabled')
 	            .text('Run Example With Version '+data.version); 
 
+
 	    }
-	});	
+	});
+
+	function successStack(data){
+		alert(
+	                'User Authorized with account id = ' + 
+	                data.networkUsers[0].account_id + ', got access token = ' + 
+	                data.accessToken
+	            ); 
+	}
 
 	$('#login-btn').click(function() {
-		alert("Simple message is executed");
+		// alert("Simple message is executed");
 		SE.authenticate({
 	        success: function(data) { 
 	            alert(

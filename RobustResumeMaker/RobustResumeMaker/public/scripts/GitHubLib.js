@@ -64,7 +64,9 @@ function repoListener(){
     console.log(response);
     var string = ""
     for (i = 0; i < response.length; i++) {
-        string = string + "<a href=\"" + response[i]["html_url"] + "\">" + response[i]["name"] + "</a>"+ "</br>";
+        string = string +
+            "<span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span> "
+            + " <a href=\"" + response[i]["html_url"] + "\"> " + response[i]["name"] + "</a>"+ "</br>";
     }
 
     document.getElementById("repoInfo").innerHTML = string

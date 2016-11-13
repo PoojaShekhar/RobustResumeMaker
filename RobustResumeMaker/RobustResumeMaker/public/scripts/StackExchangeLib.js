@@ -10,7 +10,7 @@ function getDataFromStack(){
 	console.log(">>> USERID: " + stackUserId);
 
 	var APICallUserInfo = RESTHeader + 'users/' + stackUserId + RESTVerification;
-	var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/top-tags' + RESTVerification;
+	var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/top-tags' + RESTVerification + '&order=desc&sort=popular';
 	var APICallTagInfo = RESTHeader + 'tags/$TAG/info?order=desc&sort=popular&site=stackoverflow';
 
 	getResponseFromStackExchange(APICallUserInfo, seUserInfoCallback);

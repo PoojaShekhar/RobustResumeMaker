@@ -1,36 +1,42 @@
 /**
  * Created by monica on 11/12/16.
  */
-function  processRequest(e) {
-    if (request.readyState ==4 && response.status == 200){
-        var response = JSON.parse(request.responseText);
-
-    }
-}
-
+var functionality = "";
 function reqListener(){
-    //console.log(this.responseText);
-    var response = JSON.parse(this.responseText);
+     var response = JSON.parse(this.responseText);
     console.log(response);
-    document.getElementById("ghUserInfo").innerHTML = response["id"];
-}
+    if (functionality=="post name"){
+        document.getElementById("ghUserInfo").innerHTML = response["name"];
+    }
+    if (functionality=="social"){
+        for (i = 0; i < response.length; i++) {
+            document.getElementById("ghUserInfo").innerHTML = document.getElementById("ghUserInfo").innerHTML +response[i]["name"];
+        }
+    }
+
+    //getresponse(response["subscriptions_url"]);
+ }
 
 function  getFirstName() {
     var userID = document.getElementById("ghUserID").value;
-    console.log(userID);
+
+    functionality = "post name";
+    getResponse(userID);
+
+    functionality = "social";
+    getResponse(userID+"/subscriptions");
+
+
+}
+
+function getResponse (info){
     var request = new XMLHttpRequest();
-// Initialize a request
-    var APIcall = "https://api.github.com/users/" + userID;
+    // Initialize a request
+    var APIcall = "https://api.github.com/users/" + info;
     request.addEventListener("load", reqListener);
-    console.log(APIcall);
     request.open('get', APIcall, true);
-// Send it
+
+    // Send it
     request.send();
-    //request.onreadystatechange = processRequest;
-
-
-    document.getElementById("ghUserInfo").innerHTML = response;
-
-
 }
 

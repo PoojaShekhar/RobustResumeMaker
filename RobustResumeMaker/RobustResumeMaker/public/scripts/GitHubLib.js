@@ -17,10 +17,14 @@ function reqListener(){
 
 
 function  getFirstName() {
+
     document.getElementById("userDR").style.display = 'block';
     var ghUserID = document.getElementById("ghUserID").value;
     var soUserID = document.getElementById("soUserID").value;
 
+    var qrcode = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=http://localhost:1337/mainPageForDR.html?gh="+
+        ghUserID+"%26so="+soUserID;
+    alert(qrcode);
     getResponseFromGitHub(ghUserID);
 
     // Thinks you want to get from Stack
@@ -36,12 +40,30 @@ function  getFirstName() {
 function find(){
     var query = window.location.search.substring(1);
     alert(query);
-    document.getElementById("userDR").style.display = 'block';
-    document.getElementById("tellUsMore").style.display = 'none';
+    if (query!=''){
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0]=="gh")
+                var info1 = pair[1];
+            if(pair[0]=="so")
+                var info2 = pair[1];
+        }
+
+        alert(info1, info2);
 
 
-    getResponseFromGitHub(info1);
-    getResponseFromStackExchange(info2);
+
+        document.getElementById("userDR").style.display = 'block';
+        document.getElementById("tellUsMore").style.display = 'none';
+
+
+        getResponseFromGitHub(info1);
+        getResponseFromStackExchange(info2);
+    }
+    else{
+        getFirstName();
+    }
 
 }
 

@@ -47,8 +47,8 @@ function seUserInfoCallback(){
 }
 
 function testDisplayTags(){
-	for(element in SEUserTags){
-		console.log("### " + element);
+	for(var i = 0; i < SEUserTags.length; i++){
+		console.log("### " + SEUserTags[i]["name"] + "  " + SEUserTags[i]["count"]);
 	}
 }
 
@@ -67,11 +67,7 @@ function seUserTopTagsCallback(){
 
     // Parse the JSON Array String to Objects
     SEUserTags.length = 0;
-    var test = JSON.parse(jsonTags)
-    for(tag in test){
-    	SEUserTags.push(tag);
-    	console.log(">>> TAG: " + tag["name"] + " COUNT: " + tag["count"]);
-    }
+    SEUserTags = JSON.parse(jsonTags)
 
     testDisplayTags();
 }

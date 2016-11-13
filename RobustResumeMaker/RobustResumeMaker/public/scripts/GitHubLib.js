@@ -17,15 +17,17 @@ function reqListener(){
 
 
 function  getFirstName() {
-    var query = window.location.search.valueOf()
-    alert(query);
     document.getElementById("userDR").style.display = 'block';
+    document.getElementById("tellUsMore").style.display = 'none';
+
     var ghUserID = document.getElementById("ghUserID").value;
     var soUserID = document.getElementById("soUserID").value;
 
     var qrcode = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:1337/mainPageForDR.html?gh="+
         ghUserID+"%26so="+soUserID;
-    alert(qrcode);
+
+    showQRcode(qrcode);
+
     getResponseFromGitHub(ghUserID);
 
     // Thinks you want to get from Stack
@@ -37,6 +39,9 @@ function  getFirstName() {
 
 }
 
+function showQRcode(url){
+    document.getElementById("qr").innerHTML ="<img src=\"" + url +"\">"
+}
 
 function find(){
     var query = window.location.search.substring(1);
@@ -52,10 +57,9 @@ function find(){
 
         alert(info1, info2);
 
-
-
         document.getElementById("userDR").style.display = 'block';
         document.getElementById("tellUsMore").style.display = 'none';
+        document.getElementById("qr").style.display = 'none';
 
 
         getResponseFromGitHub(info1);

@@ -22,6 +22,10 @@ function  getFirstName() {
     var soUserID = document.getElementById("soUserID").value;
 
     getResponseFromGitHub(ghUserID);
+
+    // Thinks you want to get from Stack
+
+    getResponseFromStackExchange(soUserID);
     
     //getResponseFromGitHub(userID+"/subscriptions");
 
@@ -66,3 +70,4 @@ function repoListener(){
     document.getElementById("repoInfo").innerHTML = string
 }
 
+f

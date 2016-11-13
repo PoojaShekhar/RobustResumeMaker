@@ -1,6 +1,35 @@
 // StackExchangeLib.js
-var SEKey = 'QZM9sJ9hrP4Fj1a3GF4FzQ(('
-var SESite = 'stackoverflow'
+var SEKey = 'QZM9sJ9hrP4Fj1a3GF4FzQ((';
+var SESite = 'stackoverflow';
+var RESTVerification = '?site=' + SESite +'&key=' + SEKey;
+var RESTHeader = "https://api.stackexchange.com/2.2/";
+
+function getDataFromStack(){
+	var stackUserId = document.getElementById('txtStackId').value
+
+	console.log(">>> USERID: " + stackUserId)
+
+	var APICallUserInfo = RESTHeader + 'users/' + stackUserId + RESTVerification
+	var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/top-tags' + RESTVerification
+	var APICallTagInfo = RESTHeader + 'tags/$TAG/info?order=desc&sort=popular&site=stackoverflow'
+
+
+}
+
+function getResponseFromStackExchange (stackUserId){
+    var request = new XMLHttpRequest();
+    var RESTCall = 'users'
+    var RESTVerification = '?site=' + SESite +'&key=' + SEKey
+
+    // Initialize a request
+    var APIcall = "https://api.stackexchange.com/2.2/" + 
+        RESTCall + "/" + stackUserId + RESTVerification;
+
+    request.addEventListener("load", seUserInfoCallback);
+    request.open('get', APIcall, true);
+
+
+}
 
 function seUserInfoCallback(){
     var response = JSON.parse(this.responseText);

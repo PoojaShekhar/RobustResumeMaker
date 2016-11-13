@@ -8,6 +8,7 @@
 <script type="text/javascript" src="https://api.stackexchange.com/js/2.0/all.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.sstatic.net/apiv2/js/prettify.js?v=38e736b8e1ab"></script>
+<script src="scripts/StackExchangeLib.js"></script>
 
 
 <!-- <script type="text/javascript">
@@ -170,16 +171,11 @@ if (window.location.protocol != 'https:') {
 
 </script> -->
 
-<script type="text/javascript">
-$('#login-btn').click(function(){
-	var stackId 
-});
 
-</script>
 
 	</head>
 	<body>
 		<input type="text" id="txtStackId">
-		<button id="login-btn">Retrieve info</button>
+		<button id="login-btn" onclick="getDataFromStack()">Retrieve info</button>
 	</body>
 </html>

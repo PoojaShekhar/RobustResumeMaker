@@ -32,6 +32,19 @@ function  getFirstName() {
 
 }
 
+
+function find(){
+    var query = window.location.search.substring(1);
+    alert(query);
+    document.getElementById("userDR").style.display = 'block';
+    document.getElementById("tellUsMore").style.display = 'none';
+
+
+    getResponseFromGitHub(info1);
+    getResponseFromStackExchange(info2);
+
+}
+
 function getResponseFromGitHub (info){
     var request = new XMLHttpRequest();
     // Initialize a request
@@ -58,11 +71,10 @@ function getrepos(reposURL) {
 }
 
 
-
 function repoListener(){
     var response = JSON.parse(this.responseText);
     console.log(response);
-    var string = ""
+    var string = "";
     for (i = 0; i < response.length; i++) {
         string = string +
             "<span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span> "
@@ -71,5 +83,3 @@ function repoListener(){
 
     document.getElementById("repoInfo").innerHTML = string
 }
-
-f

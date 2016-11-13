@@ -6,6 +6,7 @@ function reqListener(){
      var response = JSON.parse(this.responseText);
     console.log(response);
     if (functionality=="post name"){
+
         document.getElementById("ghUserInfo").innerHTML = response["name"];
     }
     if (functionality=="social"){
@@ -18,13 +19,13 @@ function reqListener(){
  }
 
 function  getFirstName() {
+    document.getElementById("userDR").style.display = 'block';
     var userID = document.getElementById("ghUserID").value;
 
     functionality = "post name";
     getResponse(userID);
 
-    functionality = "social";
-    getResponse(userID+"/subscriptions");
+    //getResponse(userID+"/subscriptions");
 
 
 }

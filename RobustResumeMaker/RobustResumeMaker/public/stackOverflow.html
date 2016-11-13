@@ -57,6 +57,14 @@ if (window.location.protocol != 'https:') {
 </script> -->
 
 <script type='text/javascript'>
+$(function () { prettyPrint(); });
+
+$(function() {
+if (window.location.protocol != 'https:') {
+	    $('.https-only').empty().append('<p>For simplicity, this example only runs under HTTPS.<br>Conditionally switch your <strong>channelUrl</strong> based on protocol to run under both HTTP and HTTPS</p>').append('<h2><a href="' + window.location.toString().replace(window.location.protocol, 'https:') + '">Switch to HTTPS</a></h2>');
+	}
+}
+
 $(function(){
 // Initialize library
 
@@ -71,6 +79,12 @@ $(function(){
 	//             .text('Run Example With Version '+data.version); 
 	//     }
 	// });	
+
+
+// stackexchange.com/oauth/login_success?assisted=8363&protocol=http&proxy=http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:1337/public/blank.html:124 
+
+// Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us') does not match the recipient window's origin ('http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:1337').
+
 
 	var host = "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:" + 1337;
 	// var host = "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us" 

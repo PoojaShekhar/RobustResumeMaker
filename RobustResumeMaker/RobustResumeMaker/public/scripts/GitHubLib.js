@@ -23,6 +23,14 @@ function reqListener(){
     //getresponse(response["subscriptions_url"]);
  }
 
+ function stackCallback(){
+     var response = JSON.parse(this.responseText);
+     console.log(">> Respionse from STACK")
+     console.log(response);
+
+    //getresponse(response["subscriptions_url"]);
+ }
+
 function  getFirstName() {
     document.getElementById("userDR").style.display = 'block';
     var ghUserID = document.getElementById("ghUserID").value;
@@ -30,7 +38,11 @@ function  getFirstName() {
 
     functionality = "post name";
     getResponseFromGitHub(ghUserID);
+
+    // Thinks you want to get from Stack
+
     getResponseFromStackExchange(soUserID);
+    
     //getResponseFromGitHub(userID+"/subscriptions");
 
 
@@ -56,7 +68,7 @@ function getResponseFromStackExchange (stackUserId){
     var APIcall = "https://api.stackexchange.com/2.2/" + 
         RESTCall + "/" + stackUserId + RESTVerification;
 
-    request.addEventListener("load", reqListener);
+    request.addEventListener("load", stackCallback);
     request.open('get', APIcall, true);
 
     // Send it

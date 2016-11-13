@@ -13,22 +13,15 @@ function getDataFromStack(){
 	var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/top-tags' + RESTVerification
 	var APICallTagInfo = RESTHeader + 'tags/$TAG/info?order=desc&sort=popular&site=stackoverflow'
 
+	getResponseFromStackExchange(APICallUserInfo, seUserInfoCallback)
 
 }
 
-function getResponseFromStackExchange (stackUserId){
+function getResponseFromStackExchange (APICall, callback){
     var request = new XMLHttpRequest();
-    var RESTCall = 'users'
-    var RESTVerification = '?site=' + SESite +'&key=' + SEKey
-
-    // Initialize a request
-    var APIcall = "https://api.stackexchange.com/2.2/" + 
-        RESTCall + "/" + stackUserId + RESTVerification;
-
-    request.addEventListener("load", seUserInfoCallback);
-    request.open('get', APIcall, true);
-
-
+    
+    request.addEventListener("load", callback);
+    request.open('get', APICall, true);
 }
 
 function seUserInfoCallback(){

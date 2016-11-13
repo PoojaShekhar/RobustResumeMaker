@@ -59,11 +59,11 @@ function seUserTopTagsCallback(){
     
     // Save everything in a JSON Array
     var i = 0;
-    var jsonTags = "[";
+    var jsonTags = '[';
     for(i = 0; i < tags.length -1; i++){
-    	jsonTags = jsonTags + "{name:" + tags[i]["name"] + ",count:" + tags[i]["count"] +"},";
+    	jsonTags = jsonTags + '{"name":"' + tags[i]["name"] + '","count":"' + tags[i]["count"] +'"},';
     }
-    jsonTags = jsonTags + "{name:" + tags[i]["name"] + ",count:" + tags[i]["count"] +"}]";
+    jsonTags = jsonTags + '{"name":"' + tags[i]["name"] + '","count":"' + tags[i]["count"] +'"}]';
 
     // Parse the JSON Array String to Objects
     SEUserTags.length = 0;

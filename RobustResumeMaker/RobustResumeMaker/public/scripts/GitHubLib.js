@@ -21,17 +21,18 @@ function reqListener(){
 
 function  getFirstName() {
     document.getElementById("userDR").style.display = 'block';
-    var userID = document.getElementById("ghUserID").value;
+    var ghUserID = document.getElementById("ghUserID").value;
+    var soUserID = document.getElementById("soUserID").value;
 
     functionality = "post name";
-    getResponse(userID);
-
-    //getResponse(userID+"/subscriptions");
+    getResponseFromGitHub(ghUserID);
+    getResponseFromStackExchange(soUserID);
+    //getResponseFromGitHub(userID+"/subscriptions");
 
 
 }
 
-function getResponse (info){
+function getResponseFromGitHub (info){
     var request = new XMLHttpRequest();
     // Initialize a request
     var APIcall = "https://api.github.com/users/" + info;
@@ -42,3 +43,5 @@ function getResponse (info){
     request.send();
 }
 
+function getResponseFromStackExchange (info){
+}

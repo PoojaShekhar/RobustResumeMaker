@@ -60,7 +60,7 @@ function seUserTopTagsCallback(){
     // Save everything in a JSON Array
     var i = 0;
     var jsonTags = "[";
-    for(i = 0; tags.length -1; i++){
+    for(i = 0; i < tags.length -1; i++){
     	jsonTags += "{'name':" + tags[i]["name"] + ",'count':" + tags[i]["count"] +"},";
     }
     jsonTags += "{'name':" + tags[i]["name"] + ",'count':" + tags[i]["count"] +"}]";

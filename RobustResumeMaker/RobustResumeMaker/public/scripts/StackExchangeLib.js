@@ -6,7 +6,7 @@ var RESTHeader = "https://api.stackexchange.com/2.2/";
 var SEUserTags = []
 
 function getDataFromStack(){
-	var stackUserId = document.getElementById('txtStackId').value;
+	var stackUserId = document.getElementById('soUserID').value;
 
 	console.log(">>> USERID: " + stackUserId);
 

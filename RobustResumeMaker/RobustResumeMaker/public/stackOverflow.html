@@ -40,14 +40,6 @@ if (window.location.protocol != 'https:') {
 </script> -->
 
 <script type='text/javascript'>
-$(function(){
-// Initialize library
-
-	// SE = { 
-	// 	init: function(){}, 
-	// 	authenticate: function(){} 
-	// };
-
 	var host = "cp-1.njstest.nosql-json-pg0.utah.cloudlab.us:" + 1337
 	SE.init({
 		clientId: 8363,
@@ -59,6 +51,28 @@ $(function(){
 	            .text('Run Example With Version '+data.version); 
 	    }
 	});	
+</script>
+
+<script type='text/javascript'>
+$(function(){
+// Initialize library
+
+	// SE = { 
+	// 	init: function(){}, 
+	// 	authenticate: function(){} 
+	// };
+
+	// var host = "cp-1.njstest.nosql-json-pg0.utah.cloudlab.us:" + 1337
+	// SE.init({
+	// 	clientId: 8363,
+	// 	key: 'QZM9sJ9hrP4Fj1a3GF4FzQ((', // Used for cross domain communication, it will be validated
+	//     channelUrl: host + '/test/blank.html',
+	//     complete: function(data) { // Called when all initialization is finished
+	//         $('#login-btn')
+	//             // .removeAttr('disabled')
+	//             .text('Run Example With Version '+data.version); 
+	//     }
+	// });	
 
 	$('#login-btn').click(function() {
 		alert("Simple message is executed");

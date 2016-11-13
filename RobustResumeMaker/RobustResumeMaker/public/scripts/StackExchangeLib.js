@@ -14,6 +14,7 @@ function getDataFromStack(){
 	var APICallTagInfo = RESTHeader + 'tags/$TAG/info?order=desc&sort=popular&site=stackoverflow';
 
 	getResponseFromStackExchange(APICallUserInfo, seUserInfoCallback);
+	getResponseFromStackExchange(APICAllTopTags, seUserTopTagsCallback)
 
 }
 
@@ -35,6 +36,7 @@ function seUserInfoCallback(){
     var seUserBadgeSilver = badges["silver"]
     var seUserBadgeGold = badges["gold"]
 
+    // Here you populate the components instead of writing to the console
     console.log(">>> USER INFO")
     console.log(">>> Rep: " + seUserReputation)
     console.log(">>> Gold: " + seUserBadgeGold)
@@ -46,18 +48,9 @@ function seUserInfoCallback(){
 function seUserTopTagsCallback(){
     var response = JSON.parse(this.responseText);
 
-    var badges = response["items"][0]["badge_counts"]
+    var jsonTags = "["
+    var tags = response["items"]
 
-    var seUserReputation = response["items"][0]["reputation"]
-    var seUserBadgeBronze = badges["bronze"]
-    var seUserBadgeSilver = badges["silver"]
-    var seUserBadgeGold = badges["gold"]
-
-    console.log(">>> USER INFO")
-    console.log(">>> Rep: " + seUserReputation)
-    console.log(">>> Gold: " + seUserBadgeGold)
-    console.log(">>> Silver: " + seUserBadgeSilver)
-    console.log(">>> Bronze: " + seUserBadgeBronze)
 
 }
 

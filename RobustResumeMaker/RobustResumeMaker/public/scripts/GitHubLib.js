@@ -71,9 +71,37 @@ function getResponseFromStackExchange (stackUserId){
 
 function seUserInfoCallback(){
     var response = JSON.parse(this.responseText);
-    for(var i = 0; i < response["items"].length; i++){
-        console.log(response["items"][i])
-    }
+
+    var badges = response["items"][0]["badge_counts"]
+
+    var seUserReputation = response["items"][0]["reputation"]
+    var seUserBadgeBronze = badges["bronze"]
+    var seUserBadgeSilver = badges["silver"]
+    var seUserBadgeGold = badges["gold"]
+
+    console.log(">>> USER INFO")
+    console.log(">>> Rep: " + seUserReputation)
+    console.log(">>> Gold: " + seUserBadgeGold)
+    console.log(">>> Silver: " + seUserBadgeSilver)
+    console.log(">>> Bronze: " + seUserBadgeBronze)
+
+}
+
+function seUserTopTagsCallback(){
+    var response = JSON.parse(this.responseText);
+
+    var badges = response["items"][0]["badge_counts"]
+
+    var seUserReputation = response["items"][0]["reputation"]
+    var seUserBadgeBronze = badges["bronze"]
+    var seUserBadgeSilver = badges["silver"]
+    var seUserBadgeGold = badges["gold"]
+
+    console.log(">>> USER INFO")
+    console.log(">>> Rep: " + seUserReputation)
+    console.log(">>> Gold: " + seUserBadgeGold)
+    console.log(">>> Silver: " + seUserBadgeSilver)
+    console.log(">>> Bronze: " + seUserBadgeBronze)
 
 }
 

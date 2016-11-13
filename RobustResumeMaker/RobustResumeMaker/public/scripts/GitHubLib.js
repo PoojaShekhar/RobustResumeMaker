@@ -1,6 +1,10 @@
 /**
  * Created by monica on 11/12/16.
  */
+
+var SEKey = 'QZM9sJ9hrP4Fj1a3GF4FzQ(('
+var SESite = 'stackoverflow'
+
 var functionality = "";
 function reqListener(){
      var response = JSON.parse(this.responseText);
@@ -43,5 +47,18 @@ function getResponseFromGitHub (info){
     request.send();
 }
 
-function getResponseFromStackExchange (info){
+function getResponseFromStackExchange (stackUserId){
+    var request = new XMLHttpRequest();
+    var RESTCall = 'users'
+    var RESTVerification = '?site=' + SESite +'&key=' + SEKey
+
+    // Initialize a request
+    var APIcall = "https://api.stackexchange.com/2.2/" + 
+        RESTCall + "/" + stackUserId + RESTVerification;
+
+    request.addEventListener("load", reqListener);
+    request.open('get', APIcall, true);
+
+    // Send it
+    request.send();
 }

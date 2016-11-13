@@ -56,16 +56,16 @@ if (window.location.protocol != 'https:') {
 	});	
 </script> -->
 
-<script type='text/javascript'>
-$(function () { prettyPrint(); });
+<!-- <script type='text/javascript'> 
+// $(function () { prettyPrint(); });
 
-$(function() {
-if (window.location.protocol != 'https:') {
-	    $('.https-only').empty().append('<p>For simplicity, this example only runs under HTTPS.<br>Conditionally switch your <strong>channelUrl</strong> based on protocol to run under both HTTP and HTTPS</p>').append('<h2><a href="' + window.location.toString().replace(window.location.protocol, 'https:') + '">Switch to HTTPS</a></h2>');
-	}
-});
+// $(function() {
+// if (window.location.protocol != 'https:') {
+// 	    $('.https-only').empty().append('<p>For simplicity, this example only runs under HTTPS.<br>Conditionally switch your <strong>channelUrl</strong> based on protocol to run under both HTTP and HTTPS</p>').append('<h2><a href="' + window.location.toString().replace(window.location.protocol, 'https:') + '">Switch to HTTPS</a></h2>');
+// 	}
+// });
 
-$(function(){
+// $(function(){
 // Initialize library
 
 	// var host = "localhost:" + 1337
@@ -86,48 +86,48 @@ $(function(){
 // Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us') does not match the recipient window's origin ('http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:1337').
 
 
-	var host = "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:" + 1337;
-	// var host = "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us" 
-	SE.init({
-		clientId: 8363,
-		key: 'QZM9sJ9hrP4Fj1a3GF4FzQ((', // Used for cross domain communication, it will be validated
-	    channelUrl: host + '/public/blank.html',
-	    complete: function(data) { // Called when all initialization is finished
-	        console.log(data);
-	        successStack(data);
-	        $('#login-btn')
-	            .removeAttr('disabled')
-	            .text('Run Example With Version '+data.version); 
+// 	var host = "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:" + 1337;
+// 	// var host = "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us" 
+// 	SE.init({
+// 		clientId: 8363,
+// 		key: 'QZM9sJ9hrP4Fj1a3GF4FzQ((', // Used for cross domain communication, it will be validated
+// 	    channelUrl: host + '/public/blank.html',
+// 	    complete: function(data) { // Called when all initialization is finished
+// 	        console.log(data);
+// 	        successStack(data);
+// 	        $('#login-btn')
+// 	            .removeAttr('disabled')
+// 	            .text('Run Example With Version '+data.version); 
 
 
-	    }
-	});
+// 	    }
+// 	});
 
-	function successStack(data){
-		alert(
-	                'User Authorized with account id = ' + 
-	                data.networkUsers[0].account_id + ', got access token = ' + 
-	                data.accessToken
-	            ); 
-	}
+// 	function successStack(data){
+// 		alert(
+// 	                'User Authorized with account id = ' + 
+// 	                data.networkUsers[0].account_id + ', got access token = ' + 
+// 	                data.accessToken
+// 	            ); 
+// 	}
 
-	$('#login-btn').click(function() {
-		// alert("Simple message is executed");
-		SE.authenticate({
-	        success: function(data) { 
-	            alert(
-	                'User Authorized with account id = ' + 
-	                data.networkUsers[0].account_id + ', got access token = ' + 
-	                data.accessToken
-	            ); 
-	        },
-	        error: function(data) { 
-	            alert('An error occurred:\n' + data.errorName + '\n' + data.errorMessage); 
-	        },
-	        networkUsers: true
-	    });
-	});
-});
+// 	$('#login-btn').click(function() {
+// 		// alert("Simple message is executed");
+// 		SE.authenticate({
+// 	        success: function(data) { 
+// 	            alert(
+// 	                'User Authorized with account id = ' + 
+// 	                data.networkUsers[0].account_id + ', got access token = ' + 
+// 	                data.accessToken
+// 	            ); 
+// 	        },
+// 	        error: function(data) { 
+// 	            alert('An error occurred:\n' + data.errorName + '\n' + data.errorMessage); 
+// 	        },
+// 	        networkUsers: true
+// 	    });
+// 	});
+// });
 
 // SE.init({ 
 //     // Parameters obtained by registering an app, these are specific to the SE
@@ -168,11 +168,18 @@ $(function(){
 
 // });
 
-</script>
+</script> -->
 
+<script type="text/javascript">
+$('#login-btn').click(function(){
+	var stackId 
+});
+
+</script>
 
 	</head>
 	<body>
-		<button id="login-btn">Testing Stack login</button>
+		<input type="text" id="txtStackId">
+		<button id="login-btn">Retrieve info</button>
 	</body>
 </html>

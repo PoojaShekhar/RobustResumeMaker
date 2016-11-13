@@ -5,15 +5,15 @@ var RESTVerification = '?site=' + SESite +'&key=' + SEKey;
 var RESTHeader = "https://api.stackexchange.com/2.2/";
 
 function getDataFromStack(){
-	var stackUserId = document.getElementById('txtStackId').value
+	var stackUserId = document.getElementById('txtStackId').value;
 
-	console.log(">>> USERID: " + stackUserId)
+	console.log(">>> USERID: " + stackUserId);
 
-	var APICallUserInfo = RESTHeader + 'users/' + stackUserId + RESTVerification
-	var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/top-tags' + RESTVerification
-	var APICallTagInfo = RESTHeader + 'tags/$TAG/info?order=desc&sort=popular&site=stackoverflow'
+	var APICallUserInfo = RESTHeader + 'users/' + stackUserId + RESTVerification;
+	var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/top-tags' + RESTVerification;
+	var APICallTagInfo = RESTHeader + 'tags/$TAG/info?order=desc&sort=popular&site=stackoverflow';
 
-	getResponseFromStackExchange(APICallUserInfo, seUserInfoCallback)
+	getResponseFromStackExchange(APICallUserInfo, seUserInfoCallback);
 
 }
 
@@ -22,6 +22,7 @@ function getResponseFromStackExchange (APICall, callback){
     
     request.addEventListener("load", callback);
     request.open('get', APICall, true);
+    request.send();
 }
 
 function seUserInfoCallback(){

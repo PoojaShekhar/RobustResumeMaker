@@ -8,6 +8,7 @@ function reqListener(){
     if (functionality=="post name"){
 
         document.getElementById("ghUserInfo").innerHTML = response["name"];
+        document.getElementById("userloc").innerHTML = response["location"];
     }
     if (functionality=="social"){
         for (i = 0; i < response.length; i++) {

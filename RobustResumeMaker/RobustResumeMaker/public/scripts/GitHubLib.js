@@ -5,22 +5,14 @@
 var SEKey = 'QZM9sJ9hrP4Fj1a3GF4FzQ(('
 var SESite = 'stackoverflow'
 
-var functionality = "";
 function reqListener(){
      var response = JSON.parse(this.responseText);
     console.log(response);
-    if (functionality=="post name"){
 
         document.getElementById("ghUserInfo").innerHTML = response["name"];
         document.getElementById("userloc").innerHTML = response["location"];
-    }
-    if (functionality=="social"){
-        for (i = 0; i < response.length; i++) {
-            document.getElementById("ghUserInfo").innerHTML = document.getElementById("ghUserInfo").innerHTML +response[i]["name"];
-        }
-    }
 
-    //getresponse(response["subscriptions_url"]);
+        getrepos(response["subscriptions_url"]);
  }
 
 
@@ -30,7 +22,6 @@ function  getFirstName() {
     var ghUserID = document.getElementById("ghUserID").value;
     var soUserID = document.getElementById("soUserID").value;
 
-    functionality = "post name";
     getResponseFromGitHub(ghUserID);
 
     // Thinks you want to get from Stack
@@ -53,6 +44,19 @@ function getResponseFromGitHub (info){
     request.send();
 }
 
+
+
+function getrepos(reposURL) {
+    var request = new XMLHttpRequest();
+    // Initialize a request
+    request.addEventListener("load", repoListener);
+    request.open('get', reposURL, true);
+
+
+    // Send it
+    request.send();
+
+}
 function getResponseFromStackExchange (stackUserId){
     var request = new XMLHttpRequest();
     var RESTCall = 'users'
@@ -65,8 +69,19 @@ function getResponseFromStackExchange (stackUserId){
     request.addEventListener("load", seUserInfoCallback);
     request.open('get', APIcall, true);
 
-    // Send it
-    request.send();
+
+}
+
+
+function repoListener(){
+    var response = JSON.parse(this.responseText);
+    console.log(response);
+    var string = ""
+    for (i = 0; i < response.length; i++) {
+        string = string + "<a href=\"" + response[i]["html_url"] + "\">" + response[i]["name"] + "</a>"+ "</br>";
+    }
+
+    document.getElementById("repoInfo").innerHTML = string
 }
 
 function seUserInfoCallback(){
@@ -130,6 +145,5 @@ function seUserTopTagsCallback(){
  //     document.getElementById("userloc").innerHTML += '$' + response["location"];   
  //    //getresponse(response["subscriptions_url"]);
  // }
-
 
 

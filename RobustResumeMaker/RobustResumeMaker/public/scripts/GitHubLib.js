@@ -23,13 +23,7 @@ function reqListener(){
     //getresponse(response["subscriptions_url"]);
  }
 
- function stackCallback(){
-     var response = JSON.parse(this.responseText);
-     console.log(">> Respionse from STACK")
-     console.log(response);
 
-    //getresponse(response["subscriptions_url"]);
- }
 
 function  getFirstName() {
     document.getElementById("userDR").style.display = 'block';
@@ -68,9 +62,46 @@ function getResponseFromStackExchange (stackUserId){
     var APIcall = "https://api.stackexchange.com/2.2/" + 
         RESTCall + "/" + stackUserId + RESTVerification;
 
-    request.addEventListener("load", stackCallback);
+    request.addEventListener("load", seUserInfoCallback);
     request.open('get', APIcall, true);
 
     // Send it
     request.send();
 }
+
+function seUserInfoCallback(){
+    var response = JSON.parse(this.responseText);
+    for(var i = 0; i < response["items"].length; i++){
+        console.log(response["items"][i])
+    }
+
+}
+
+ // function stackCallback(){
+ //     var response = JSON.parse(this.responseText);
+ //     console.log(">> Respionse from STACK")
+ //     console.log(response);
+
+ //     // Hasti's 4204212
+ //     // USER-INFO
+ //     CALL: https://api.stackexchange.com/2.2/users/4204212?site=stackoverflow&key=QZM9sJ9hrP4Fj1a3GF4FzQ((
+ //     items[0]["reputation"]
+ //     items[0]["badges_count"] => bronze, silver, gold
+
+ //     // TOP-TAGS
+ //     CALL: https://api.stackexchange.com/2.2/users/4204212/top-tags?site=stackoverflow
+ //     items[i] => count, name
+
+ //     // HOW RELEVANT A TAG IS
+ //     CALL: https://api.stackexchange.com/2.2/tags/scala/info?order=desc&sort=popular&site=stackoverflow
+ //     items[i] => name, count
+
+
+
+ //     document.getElementById("ghUserInfo").innerHTML += '$' + response["name"];
+ //     document.getElementById("userloc").innerHTML += '$' + response["location"];   
+ //    //getresponse(response["subscriptions_url"]);
+ // }
+
+
+

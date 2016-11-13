@@ -2,8 +2,7 @@
  * Created by monica on 11/12/16.
  */
 
-var SEKey = 'QZM9sJ9hrP4Fj1a3GF4FzQ(('
-var SESite = 'stackoverflow'
+
 
 function reqListener(){
      var response = JSON.parse(this.responseText);
@@ -23,10 +22,6 @@ function  getFirstName() {
     var soUserID = document.getElementById("soUserID").value;
 
     getResponseFromGitHub(ghUserID);
-
-    // Thinks you want to get from Stack
-
-    getResponseFromStackExchange(soUserID);
     
     //getResponseFromGitHub(userID+"/subscriptions");
 
@@ -57,20 +52,7 @@ function getrepos(reposURL) {
     request.send();
 
 }
-function getResponseFromStackExchange (stackUserId){
-    var request = new XMLHttpRequest();
-    var RESTCall = 'users'
-    var RESTVerification = '?site=' + SESite +'&key=' + SEKey
 
-    // Initialize a request
-    var APIcall = "https://api.stackexchange.com/2.2/" + 
-        RESTCall + "/" + stackUserId + RESTVerification;
-
-    request.addEventListener("load", seUserInfoCallback);
-    request.open('get', APIcall, true);
-
-
-}
 
 
 function repoListener(){
@@ -83,39 +65,4 @@ function repoListener(){
 
     document.getElementById("repoInfo").innerHTML = string
 }
-
-function seUserInfoCallback(){
-    var response = JSON.parse(this.responseText);
-    for(var i = 0; i < response["items"].length; i++){
-        console.log(response["items"][i])
-    }
-
-}
-
- // function stackCallback(){
- //     var response = JSON.parse(this.responseText);
- //     console.log(">> Respionse from STACK")
- //     console.log(response);
-
- //     // Hasti's 4204212
- //     // USER-INFO
- //     CALL: https://api.stackexchange.com/2.2/users/4204212?site=stackoverflow&key=QZM9sJ9hrP4Fj1a3GF4FzQ((
- //     items[0]["reputation"]
- //     items[0]["badges_count"] => bronze, silver, gold
-
- //     // TOP-TAGS
- //     CALL: https://api.stackexchange.com/2.2/users/4204212/top-tags?site=stackoverflow
- //     items[i] => count, name
-
- //     // HOW RELEVANT A TAG IS
- //     CALL: https://api.stackexchange.com/2.2/tags/scala/info?order=desc&sort=popular&site=stackoverflow
- //     items[i] => name, count
-
-
-
- //     document.getElementById("ghUserInfo").innerHTML += '$' + response["name"];
- //     document.getElementById("userloc").innerHTML += '$' + response["location"];   
- //    //getresponse(response["subscriptions_url"]);
- // }
-
 

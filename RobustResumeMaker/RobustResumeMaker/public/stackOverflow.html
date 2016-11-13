@@ -63,7 +63,7 @@ $(function() {
 if (window.location.protocol != 'https:') {
 	    $('.https-only').empty().append('<p>For simplicity, this example only runs under HTTPS.<br>Conditionally switch your <strong>channelUrl</strong> based on protocol to run under both HTTP and HTTPS</p>').append('<h2><a href="' + window.location.toString().replace(window.location.protocol, 'https:') + '">Switch to HTTPS</a></h2>');
 	}
-}
+});
 
 $(function(){
 // Initialize library

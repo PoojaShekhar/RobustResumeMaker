@@ -72,15 +72,15 @@ $(function(){
 	//     }
 	// });	
 
-	var host = "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:" + 1337
+	var host = "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:" + 1337;
 	// var host = "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us" 
 	SE.init({
 		clientId: 8363,
 		key: 'QZM9sJ9hrP4Fj1a3GF4FzQ((', // Used for cross domain communication, it will be validated
 	    channelUrl: host + '/public/blank.html',
 	    complete: function(data) { // Called when all initialization is finished
-	        console.log(data)
-	        successStack(data)
+	        console.log(data);
+	        successStack(data);
 	        $('#login-btn')
 	            .removeAttr('disabled')
 	            .text('Run Example With Version '+data.version); 

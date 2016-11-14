@@ -61,9 +61,9 @@ function generateTagsString(){
 	var tagsString = "";
 	var i = 0;
 	for(i = 0; i < SEUserTags.length - 1; i++) {
-		tagsString = SETagsString + SEUserTags[i]["name"] + ";";
+		tagsString = tagsString + SEUserTags[i]["name"] + ";";
 	}
-	tagsString = SETagsString + SEUserTags[i]["name"];
+	tagsString = tagsString + SEUserTags[i]["name"];
 
 	return tagsString;
 }

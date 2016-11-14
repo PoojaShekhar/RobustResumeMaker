@@ -101,7 +101,7 @@ function reqLangListener() {
         newReq.open("get",responseLang[0]["languages_url"], true );
         newReq.send();
     }
-    
+    printAllLanguages();
 }
 
 function printAllLanguages(){

@@ -36,8 +36,8 @@
       <file leaf-file-name="GitHubLib.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/GitHubLib.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="60" column="42" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="42" />
+            <state relative-caret-position="627">
+              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="62" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -45,25 +45,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainPageForDR.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mainPageForDR.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/mainPageForDR.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="739">
-              <caret line="388" column="96" selection-start-line="388" selection-start-column="96" selection-end-line="388" selection-end-column="96" />
+            <state relative-caret-position="297">
+              <caret line="202" column="100" selection-start-line="202" selection-start-column="100" selection-end-line="202" selection-end-column="100" />
               <folding>
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#1;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#10039#10045#1" expanded="true" />
+                <element signature="e#10206#10212#1" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#1;n#div#5;n#div#1;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StackExchangeLib.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StackExchangeLib.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="56" column="19" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
+            <state relative-caret-position="711">
+              <caret line="59" column="26" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -89,8 +92,8 @@
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/blank.html" />
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/masterpiece.html" />
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js" />
-        <option value="$PROJECT_DIR$/RobustResumeMaker/public/mainPageForDR.html" />
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/scripts/GitHubLib.js" />
+        <option value="$PROJECT_DIR$/RobustResumeMaker/public/mainPageForDR.html" />
       </list>
     </option>
   </component>
@@ -296,7 +299,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45364000" />
+    <option name="totallyTimeSpent" value="46096000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2324" y="-2576" width="3232" height="2492" extended-state="6" />
@@ -504,8 +507,11 @@
         <state relative-caret-position="1406">
           <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#1;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#10039#10045#1" expanded="true" />
+            <element signature="e#10206#10212#1" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#1;n#div#5;n#div#1;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -693,33 +699,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/mainPageForDR.html">
+    <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="739">
-          <caret line="388" column="96" selection-start-line="388" selection-start-column="96" selection-end-line="388" selection-end-column="96" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#10039#10045#1" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#5;n#div#1;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="711">
+          <caret line="59" column="26" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/GitHubLib.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="60" column="42" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="42" />
+        <state relative-caret-position="627">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="62" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js">
+    <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/mainPageForDR.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="56" column="19" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="297">
+          <caret line="202" column="100" selection-start-line="202" selection-start-column="100" selection-end-line="202" selection-end-column="100" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#1;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#10206#10212#1" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#5;n#div#1;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -76,6 +76,7 @@ function onLinkedInLoad() {
 IN.Event.on(IN, "auth", onLinkedInAuth);
 }
 function onLinkedInAuth() {
+    document.getElementById("logedin").style.display = 'block';
 IN.API.Profile("me")
 .fields("firstName", "lastName", "industry", "location:(name)", "picture-url", "headline", "summary", "num-connections", "public-profile-url", "positions", "email-address", "educations")
 .result(collectProfilesData)
@@ -199,6 +200,7 @@ function collectProfilesData(profiles) {
                                 <div class="col-sm-1 col-md-3"><i class="flaticon-linkedin22"></i><div class="dividewhite1"></div></div>
                                 <div class="col-sm-11 col-md-9">
                                     <h5 class="font-accident-one-bold">LinkedIn: </h5>
+                                    <div id="logedin" style="display: none">You are logged in!</div>
                                     <p class="small">
                                         <script type="in/Login">
                                         </script>

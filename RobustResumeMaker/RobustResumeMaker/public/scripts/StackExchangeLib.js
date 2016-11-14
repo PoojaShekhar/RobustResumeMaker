@@ -11,15 +11,17 @@ var APICallTagInfo = RESTHeader + 'tags/$TAG/info?order=desc&sort=popular&site=s
 
 function getDataFromStack(){
 	var stackUserId = document.getElementById('soUserID').value;
+    if (stackUserId!=""){
+        console.log(">>> USERID: " + stackUserId);
+        console.log(">>> USERP: http://stackoverflow.com/u/" + stackUserId)
 
-	console.log(">>> USERID: " + stackUserId);
-	console.log(">>> USERP: http://stackoverflow.com/u/" + stackUserId)
+        var APICallUserInfo = RESTHeader + 'users/' + stackUserId + RESTVerification;
+        var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/tags' + RESTVerification + '&order=desc&sort=popular';
 
-	var APICallUserInfo = RESTHeader + 'users/' + stackUserId + RESTVerification;
-	var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/tags' + RESTVerification + '&order=desc&sort=popular';
-	
-	getResponseFromStackExchange(APICallUserInfo, seUserInfoCallback);
-	getResponseFromStackExchange(APICAllTopTags, seUserTopTagsCallback);
+        getResponseFromStackExchange(APICallUserInfo, seUserInfoCallback);
+        getResponseFromStackExchange(APICAllTopTags, seUserTopTagsCallback);
+    }
+
 
 }
 

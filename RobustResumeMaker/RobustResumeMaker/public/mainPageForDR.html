@@ -91,7 +91,7 @@ function collectProfilesData(profiles) {
     document.getElementById("lblPosition1").innerHTML= member["positions"]["values"][0]["title"]
     //console.log(member["positions"]["values"][0]["company"]["name"])
     document.getElementById("lblEmail").innerHTML = member.emailAddress;
-    document.getElementById("lblProfile").innerHTML = member.publicProfileUrl;
+    document.getElementById("lblProfile").innerHTML = " <u><a href=\"" + member.publicProfileUrl + "\"> Click Here!</a></u>";
 }
 </script>
 
@@ -303,7 +303,7 @@ function collectProfilesData(profiles) {
                                                             <div class="dividewhite1"></div>
                                                             <h5 class="font-accident-one-bold subtitle">My badges</h5>
                                                             <p id="badgeInfo" class="small">
-                                                                <div class="repu" id="repu"></div>
+                                                                <div class="repu" id="repu">NA</div>
                                                                 <div class="gold" id="gold"></div>
                                                                 <div class="silver" id="silver"></div>
                                                                 <div class="bronze" id="bronze"></div>

@@ -4,23 +4,77 @@ var SESite = 'stackoverflow';
 var RESTVerification = '?site=' + SESite +'&key=' + SEKey;
 var RESTHeader = "https://api.stackexchange.com/2.2/";
 var SEUserTags = []
+var SETagsPopular = [];
 
+
+
+function generateTagsString(){
+    var tagsString = "";
+    var i = 0;
+    for(i = 0; i < SEUserTags.length - 1; i++) {
+        tagsString = tagsString + SEUserTags[i]["name"] + ";";
+    }
+    tagsString = tagsString + SEUserTags[i]["name"];
+
+    return tagsString;
+}
+
+function seUserTopTagsCallback(){
+    var response = JSON.parse(this.responseText);
+
+    var tags = response["items"];
+
+    // Save everything in a JSON Array
+    var i = 0;
+    var jsonTags = '[';
+    for(i = 0; i < tags.length -1; i++){
+        jsonTags = jsonTags + '{"name":"' + tags[i]["name"] + '","count":"' + tags[i]["count"] +'"},';
+    }
+    jsonTags = jsonTags + '{"name":"' + tags[i]["name"] + '","count":"' + tags[i]["count"] +'"}]';
+
+    // Parse the JSON Array String to Objects
+    SEUserTags.length = 0;
+    SEUserTags = JSON.parse(jsonTags)
+
+    var strings = generateTagsString()
+    var string = ""
+    for(var i = 0; i < 4; i++){
+        string = string +
+            "<span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span> "
+            + SEUserTags[i]["name"] + "  <span class=\"badge\">" + SEUserTags[i]["count"] + "</span></br>";
+    }
+    //use id = involve
+    document.getElementById("involve").innerHTML = string
+    var APICALL = APICallTagInfo.replace("$TAG", strings)
+
+    console.log("XX> " + APICALL)
+}
 
 // Since this call does not requiere the user ID, we can put it here
 var APICallTagInfo = RESTHeader + 'tags/$TAG/info?order=desc&sort=popular&site=stackoverflow';
 
-function getDataFromStack(){
-	var stackUserId = document.getElementById('soUserID').value;
+function getDataFromStack(stackUserIdM){
+    var stackUserId = ""
 
-	console.log(">>> USERID: " + stackUserId);
-	console.log(">>> USERP: http://stackoverflow.com/u/" + stackUserId)
+    if(stackUserIdM == ""){
+        stackUserId = document.getElementById('soUserID').value;
+    }
+    else{
+        stackUserId = stackUserIdM;
+    }
 
-	var APICallUserInfo = RESTHeader + 'users/' + stackUserId + RESTVerification;
-	var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/tags' + RESTVerification + '&order=desc&sort=popular';
-	
-	getResponseFromStackExchange(APICallUserInfo, seUserInfoCallback);
-	getResponseFromStackExchange(APICAllTopTags, seUserTopTagsCallback);
+    if (stackUserId!=""){
+        document.getElementById("soName").innerHTML = " <a href=\"http://stackoverflow.com/u/"
+            + stackUserId + "\"> My StackExchange Profile</a>";
 
+        var APICallUserInfo = RESTHeader + 'users/' + stackUserId + RESTVerification;
+        var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/tags' + RESTVerification + '&order=desc&sort=popular';
+
+        getResponseFromStackExchange(APICallUserInfo, seUserInfoCallback);
+        getResponseFromStackExchange(APICAllTopTags, seUserTopTagsCallback);
+    }
+
+    
 }
 
 function getResponseFromStackExchange (APICall, callback){
@@ -48,43 +102,6 @@ function seUserInfoCallback(){
     document.getElementById("silver").innerHTML = "Silver <span class=\"badge\">"+seUserBadgeSilver+"</span>";
     document.getElementById("bronze").innerHTML = "Bronze <span class=\"badge\">"+seUserBadgeBronze+"</span>";
 
-
-}
-
-function testDisplayTags(){
-	for(var i = 0; i < SEUserTags.length; i++){
-		console.log("### " + SEUserTags[i]["name"] + "  " + SEUserTags[i]["count"]);
-	}
-}
-
-function generateTagsString(){
-	var SETagsString = ""
-	
-	var i = 0
-	for(i = 0; i < SEUserTags.length - 1; i++) {
-		SETagsString = SETagsString + SEUserTags[i]["name"] + ";"
-	}
-	SETagsString = SETagsString + SEUserTags[i]["name"] + ";"
-}
-
-function seUserTopTagsCallback(){
-    var response = JSON.parse(this.responseText);
-
-	var tags = response["items"];
-    
-    // Save everything in a JSON Array
-    var i = 0;
-    var jsonTags = '[';
-    for(i = 0; i < tags.length -1; i++){
-    	jsonTags = jsonTags + '{"name":"' + tags[i]["name"] + '","count":"' + tags[i]["count"] +'"},';
-    }
-    jsonTags = jsonTags + '{"name":"' + tags[i]["name"] + '","count":"' + tags[i]["count"] +'"}]';
-
-    // Parse the JSON Array String to Objects
-    SEUserTags.length = 0;
-    SEUserTags = JSON.parse(jsonTags)
-    testDisplayTags();
-    generateTagsString
 }
 
  // function stackCallback(){

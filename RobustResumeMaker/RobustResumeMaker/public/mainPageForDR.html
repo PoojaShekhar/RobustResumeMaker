@@ -76,6 +76,7 @@ function onLinkedInLoad() {
 IN.Event.on(IN, "auth", onLinkedInAuth);
 }
 function onLinkedInAuth() {
+    document.getElementById("logedin").style.display = 'block';
 IN.API.Profile("me")
 .fields("firstName", "lastName", "industry", "location:(name)", "picture-url", "headline", "summary", "num-connections", "public-profile-url", "positions", "email-address", "educations")
 .result(collectProfilesData)
@@ -90,13 +91,18 @@ function collectProfilesData(profiles) {
     document.getElementById("lblLocation").innerHTML= member.location.name
     document.getElementById("lblPosition0").innerHTML= member["positions"]["values"][0]["company"]["name"]
     document.getElementById("lblPosition1").innerHTML= member["positions"]["values"][0]["title"]
+    document.getElementById("lblSummary").innerHTML = member["positions"]["values"][0]["summary"];
     //console.log(member["positions"]["values"][0]["company"]["name"])
     document.getElementById("lblEmail").innerHTML = member.emailAddress;
+
     document.getElementById("lblProfile").innerHTML = member.publicProfileUrl;
     document.getElementById("imageid").src=member.pictureUrl;
-    document.getElementById("lblProfile1").innerHTML = "<u><a href=\"" + member.publicProfileUrl + "\">"+member.publicProfileUrl+"</a></u>";
+    
 
     document.getElementById("lblHeadline").innerHTML= member.headline
+
+
+    document.getElementById("lblProfile").innerHTML = " <u><a href=\"" + member.publicProfileUrl + "\"> Here</a></u>";
 
 }
 </script>
@@ -204,6 +210,7 @@ function collectProfilesData(profiles) {
                                 <div class="col-sm-1 col-md-3"><i class="flaticon-linkedin22"></i><div class="dividewhite1"></div></div>
                                 <div class="col-sm-11 col-md-9">
                                     <h5 class="font-accident-one-bold">LinkedIn: </h5>
+                                    <div id="logedin" style="display: none">You are logged in!</div>
                                     <p class="small">
                                         <script type="in/Login">
                                         </script>
@@ -217,7 +224,7 @@ function collectProfilesData(profiles) {
 
 
                  
-                        <button type="button" class="btn btn-warning" onclick="getFirstName();getDataFromStack()">
+                        <button type="button" class="btn btn-warning" onclick="getFirstName();getDataFromStack('')">
 
                             <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Ready!
                         </button>
@@ -308,11 +315,13 @@ function collectProfilesData(profiles) {
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane" id="2">
+                                                        <div class="dividewhite1"></div>
+                                                        <h3 class="font-accident-two-normal" id="soName"></h3>
                                                         <div class="col-md-6">
                                                             <div class="dividewhite1"></div>
                                                             <h5 class="font-accident-one-bold subtitle">My badges</h5>
                                                             <p id="badgeInfo" class="small">
-                                                                <div class="repu" id="repu"></div>
+                                                                <div class="repu" id="repu">NA</div>
                                                                 <div class="gold" id="gold"></div>
                                                                 <div class="silver" id="silver"></div>
                                                                 <div class="bronze" id="bronze"></div>
@@ -321,7 +330,8 @@ function collectProfilesData(profiles) {
                                                         <div class="col-md-6">
                                                             <div class="dividewhite1"></div>
                                                             <h5 class="font-accident-one-bold subtitle">My Involvement</h5>
-
+                                                            <div class="dividewhite1"></div>
+                                                                <div id="involve"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -351,11 +361,13 @@ function collectProfilesData(profiles) {
                                         <div class="two"><p class="small"><label id="lblLocation"/></p></div>
                                     </div>
                                     <div class="fullwidth box">
-                                        <div class="one"><p class="small uppercase">Company</p></div>
+
+                                        <div class="one"><p class="small uppercase">Current Affiliation</p></div>
+
                                         <div class="two"><p class="small"><label id="lblPosition0"/></p></div>
                                     </div>
                                     <div class="fullwidth box">
-                                        <div class="one"><p class="small uppercase">Designation</p></div>
+                                        <div class="one"><p class="small uppercase">Position</p></div>
                                         <div class="two"><p class="small"><label id="lblPosition1" /></p></div>
                                     </div>
                                     <div class="fullwidth box">
@@ -366,7 +378,7 @@ function collectProfilesData(profiles) {
                         
                                     
                                     <div class="fullwidth box">
-                                        <div class="one"><p class="small uppercase">Profile URL</p></div>
+                                        <div class="one"><p class="small uppercase">linkedin Profile</p></div>
                                         <div class="two"><p class="small" style="float: left"><label id="lblProfile" /></p></div>
                                     </div>
                                     </div>
@@ -391,45 +403,10 @@ function collectProfilesData(profiles) {
 
                         <div class="col-md-8 circle-skills nopadding ui-block-color03">
                             <div class="padding-50 wow fadeInLeft" data-wow-delay="0.6s" data-wow-offset="5">
-                                <h3 class="font-accident-two-normal uppercase">My Professional skills</h3>
+                                <h3 class="font-accident-two-normal uppercase">current position summary</h3>
                                 <div class="dividewhite1"></div>
-                                <div class="row">
-                                    <div class="col-sm-4 nopadding">
-                                        <div class="progressbar" data-animate="false">
-                                            <div class="circle font-accident-one-normal" data-percent="72.5">
-                                                <div></div>
-                                                <h4 class="font-accident-one-normal uppercase">Prototyping</h4>
-                                                <p class="font-regular-normal">
-                                                    A prototype is an early sample, model, or release of a product built to test ...
-                                                </p>
-                                                <a href="#!" class="btn btn-wh-trans btn-xs">Learn More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4 nopadding">
-                                        <div class="progressbar" data-animate="false">
-                                            <div class="circle font-accident-one-normal" data-percent="94.5">
-                                                <div></div>
-                                                <h4 class="font-accident-one-normal uppercase">Design</h4>
-                                                <p class="font-regular-normal">
-                                                    Design is the creation of a plan or convention for the construction of an object ...
-                                                </p>
-                                                <a href="#!" class="btn btn-wh-trans btn-xs">Learn More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4 nopadding">
-                                        <div class="progressbar" data-animate="false">
-                                            <div class="circle font-accident-one-normal" data-percent="30.5">
-                                                <div></div>
-                                                <h4 class="font-accident-one-normal uppercase">Development</h4>
-                                                <p class="font-regular-normal">
-                                                    Software development is the process of computer programming ...
-                                                </p>
-                                                <a href="#!" class="btn btn-wh-trans btn-xs">Learn More</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="row" id="lblSummary">
+
                                 </div>
                             </div>
                         </div>

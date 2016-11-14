@@ -51,7 +51,6 @@ function find(){
                 var info2 = pair[1];
         }
 
-        alert(info1, info2);
 
         document.getElementById("userDR").style.display = 'block';
         document.getElementById("tellUsMore").style.display = 'none';

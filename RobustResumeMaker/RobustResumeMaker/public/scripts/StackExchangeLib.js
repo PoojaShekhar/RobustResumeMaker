@@ -102,8 +102,6 @@ function seUserInfoCallback(){
     document.getElementById("silver").innerHTML = "Silver <span class=\"badge\">"+seUserBadgeSilver+"</span>";
     document.getElementById("bronze").innerHTML = "Bronze <span class=\"badge\">"+seUserBadgeBronze+"</span>";
 
-
-
 }
 
  // function stackCallback(){

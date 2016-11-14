@@ -12,15 +12,17 @@ var APICallTagInfo = RESTHeader + 'tags/$TAG/info?order=desc&sort=popular&site=s
 
 function getDataFromStack(){
 	var stackUserId = document.getElementById('soUserID').value;
+    if (stackUserId!=""){
+        document.getElementById("soName").innerHTML = " <a href=\"http://stackoverflow.com/u/"
+            + stackUserId + "\"> My StackExchange Profile</a>";
 
-	console.log(">>> USERID: " + stackUserId);
-	console.log(">>> USERP: http://stackoverflow.com/u/" + stackUserId)
+        var APICallUserInfo = RESTHeader + 'users/' + stackUserId + RESTVerification;
+        var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/tags' + RESTVerification + '&order=desc&sort=popular';
 
-	var APICallUserInfo = RESTHeader + 'users/' + stackUserId + RESTVerification;
-	var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/tags' + RESTVerification + '&order=desc&sort=popular';
-	
-	getResponseFromStackExchange(APICallUserInfo, seUserInfoCallback);
-	getResponseFromStackExchange(APICAllTopTags, seUserTopTagsCallback);
+        getResponseFromStackExchange(APICallUserInfo, seUserInfoCallback);
+        getResponseFromStackExchange(APICAllTopTags, seUserTopTagsCallback);
+    }
+
 
 }
 
@@ -54,6 +56,7 @@ function seUserInfoCallback(){
 
 function testDisplayTags(){
 	for(var i = 0; i < SEUserTags.length; i++){
+        //use id = involve
 		console.log("### " + SEUserTags[i]["name"] + "  " + SEUserTags[i]["count"]);
 	}
 }

@@ -45,17 +45,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StackExchangeLib.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StackExchangeLib.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-756">
-              <caret line="8" column="64" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
+            <state relative-caret-position="-1934">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainPageForDR.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mainPageForDR.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/mainPageForDR.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1406">
@@ -98,9 +98,9 @@
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/index.html" />
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/blank.html" />
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/masterpiece.html" />
-        <option value="$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js" />
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/scripts/GitHubLib.js" />
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/mainPageForDR.html" />
+        <option value="$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js" />
       </list>
     </option>
   </component>
@@ -301,12 +301,12 @@
       <workItem from="1478974962066" duration="6655000" />
       <workItem from="1478987017497" duration="8019000" />
       <workItem from="1479053428736" duration="409000" />
-      <workItem from="1479054612842" duration="25030000" />
+      <workItem from="1479054612842" duration="25073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40113000" />
+    <option name="totallyTimeSpent" value="40156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2324" y="-2576" width="3232" height="2492" extended-state="6" />
@@ -533,14 +533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-756">
-          <caret line="8" column="64" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/GitHubLib.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -560,6 +552,14 @@
             <element signature="e#9911#9917#1" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#1;n#div#5;n#div#1;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1934">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

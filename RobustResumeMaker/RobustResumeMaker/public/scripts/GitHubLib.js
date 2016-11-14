@@ -14,27 +14,20 @@ function reqListener(){
         getrepos(response["subscriptions_url"]);
  }
 
-
-
 function  getFirstName() {
     document.getElementById("userDR").style.display = 'block';
     document.getElementById("tellUsMore").style.display = 'none';
-
+    getDataFromStack();
     var ghUserID = document.getElementById("ghUserID").value;
     var soUserID = document.getElementById("soUserID").value;
 
-    var qrcode = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:1337/mainPageForDR.html?gh="+
+    var qrcode = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl="+
+        "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:1337/mainPageForDR.html?gh="+
         ghUserID+"%26so="+soUserID;
 
     showQRcode(qrcode);
 
     getResponseFromGitHub(ghUserID);
-
-    // Thinks you want to get from Stack
-
-    getResponseFromStackExchange(soUserID);
-    
-    //getResponseFromGitHub(userID+"/subscriptions");
 
 
 }
@@ -79,8 +72,6 @@ function getResponseFromGitHub (info){
     // Send it
     request.send();
 }
-
-
 
 function getrepos(reposURL) {
     var request = new XMLHttpRequest();

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <!--[if IE 9]>
 <html class="ie9" lang="en">    <![endif]-->
@@ -50,7 +50,41 @@
             background: #666666 url("../assets/custom/images/preloader.gif") no-repeat center center; }
     </style>
     <script src="scripts/GitHubLib.js"></script>
+
+    <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+        api_key: 788mmi3lsbxzk2
+        authorize: true
+        onLoad: onLinkedInLoad
+        scope: r_basicprofile r_emailaddress
+    </script>
+    <script type="text/javascript">
+    var dataJ
+
+function onLinkedInLoad() {
+IN.Event.on(IN, "auth", onLinkedInAuth);
+}
+function onLinkedInAuth() {
+IN.API.Profile("me")
+.fields("firstName", "lastName", "industry", "location:(name)", "picture-url", "headline", "summary", "num-connections", "public-profile-url", "positions", "email-address", "educations")
+.result(collectProfilesData)
+}
+
+function collectProfilesData(profiles) {
+    member = profiles.values[0];
+    dataJ=JSON.stringify(member);
+    console.log(dataJ)
+    document.getElementById("lblName").innerHTML = member.firstName + " " + member.lastName
+    document.getElementById("lblLocation").innerHTML= member.location.name
+    document.getElementById("lblPosition0").innerHTML= member["positions"]["values"][0]["company"]["name"]
+    document.getElementById("lblPosition1").innerHTML= member["positions"]["values"][0]["title"]
+    //console.log(member["positions"]["values"][0]["company"]["name"])
+    document.getElementById("lblEmail").innerHTML = member.emailAddress;
+    document.getElementById("lblProfile").innerHTML = member.publicProfileUrl;
+}
+</script>
+
     <script src="scripts/StackExchangeLib.js"></script>
+
 
 </head>
 
@@ -153,7 +187,8 @@
                                 <div class="col-sm-11 col-md-9">
                                     <h5 class="font-accident-one-bold">LinkedIn: </h5>
                                     <p class="small">
-                                        here goes the login for linkedin account
+                                        <script type="in/Login">
+                                        </script>
                                     </p>
                                 </div>
                             </div>
@@ -161,7 +196,9 @@
                         </div>
                     </div>
                     <div class="col-md-3 col-md-offset-5">
-                        <button type="button" class="btn btn-default btn-wh-trans btn-lg" onclick="getFirstName();getDataFromStack()">
+
+                        <button type="button" class="btn btn-warning btn-default btn-wh-trans btn-lg" onclick="getFirstName();getDataFromStack()">
+
                             <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Ready!
                         </button>
                     </div>
@@ -268,27 +305,34 @@
                                 <div>
                                     <div class="fullwidth box">
                                         <div class="one"><p class="small uppercase">Name:</p></div>
-                                        <div class="two"><p class="small">Samuel Anderson</p></div>
+                                        <div class="two"><p class="small"><label id="lblName"/></p></div>
                                     </div>
                                     <div class="fullwidth box">
-                                        <div class="one"><p class="small uppercase text-nowrap">Date of Birth:</p></div>
-                                        <div class="two"><p class="small">03/12/1980</p></div>
+                                        <div class="one"><p class="small uppercase text-nowrap">Location:</p></div>
+                                        <div class="two"><p class="small"><label id="lblLocation"/></p></div>
                                     </div>
                                     <div class="fullwidth box">
-                                        <div class="one"><p class="small uppercase">Address:</p></div>
-                                        <div class="two"><p class="small">1234, Direct drive, Daytona Beach, Fl, USA</p></div>
+                                        <div class="one"><p class="small uppercase">Current Position</p></div>
+                                        <div class="two"><p class="small"><label id="lblPosition0"/></p></div>
                                     </div>
                                     <div class="fullwidth box">
-                                        <div class="one"><p class="small uppercase">Phone:</p></div>
-                                        <div class="two"><p class="small">1 234 567 89 10</p></div>
+                                        <div class="one"><p class="small uppercase">Designation</p></div>
+                                        <div class="two"><p class="small"><label id="lblPosition1" /></p></div>
                                     </div>
                                     <div class="fullwidth box">
-                                        <div class="one"><p class="small uppercase">Email:</p></div>
-                                        <div class="two"><p class="small">james@anderson.com</p></div>
+                                        <div class="one"><p class="small uppercase">Email</p></div>
+                                        <div class="two"><p class="small"><label id="lblEmail"/></p></div>
                                     </div>
+
+                        
+                                    
+                                    <div class="fullwidth box">
+                                        <div class="one"><p class="small uppercase">Profile URL</p></div>
+                                        <div class="two"><p class="small" style="float: left"><label id="lblProfile" /></p></div>
+                                    </div>
+                                    </div>
+                                    <div class="dividewhite1"></div>
                                 </div>
-                                <div class="dividewhite1"></div>
-                            </div>
                         </div>
 
                     </div>

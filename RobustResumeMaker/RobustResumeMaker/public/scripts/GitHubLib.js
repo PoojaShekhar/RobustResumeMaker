@@ -2,6 +2,7 @@
  * Created by monica on 11/12/16.
  */
 
+var GitUserLanguages = [];
 
 var languages="";
 function reqListener(){
@@ -86,22 +87,34 @@ function getResponseFromGitHub (info){
     repRequest.send();
 }
 
+
+
 function reqLangListener() {
     var responseLang = JSON.parse(this.responseText);
-    console.log( responseLang[0]["languages_url"]);
-    var newReq = new XMLHttpRequest();
-    newReq.addEventListener( "load", getLanguages);
-    newReq.open("get",responseLang[0]["languages_url"], true );
-    newReq.send();
+    var 
+    for(var i = 0; i < responseLang.length; i++){
+        var langURL = responseLang[i]["languages_url"]
 
+        var newReq = new XMLHttpRequest();
+        newReq.addEventListener( "load", getLanguages);
+        newReq.open("get",responseLang[0]["languages_url"], true );
+        newReq.send();
+    }
+    printAllLanguages();   
+}
+
+function printAllLanguages(){
+    for(var i = 0; i < GitUserLanguages.length; i++){
+        console.log("::::> " + GitUserLanguages[i])
+    }
 }
 
 function  getLanguages() {
     var responseLang = JSON.parse(this.responseText);
     for (i=0;  i<Object.keys(responseLang).length; i++) {
-        languages += Object.keys(responseLang)[i]+"\n";
+        GitUserLanguages.push(Object.keys(responseLang)[i]);
     }
-    console.log("languages>>>>" + languages);
+    
 }
 
 function getrepos(reposURL) {

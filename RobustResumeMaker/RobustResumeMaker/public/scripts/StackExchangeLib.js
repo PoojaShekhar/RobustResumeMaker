@@ -57,13 +57,14 @@ function testDisplayTags(){
 }
 
 function generateTagsString(){
-	var SETagsString = ""
-	
-	var i = 0
+	var tagsString = "";
+	var i = 0;
 	for(i = 0; i < SEUserTags.length - 1; i++) {
-		SETagsString = SETagsString + SEUserTags[i]["name"] + ";"
+		tagsString = SETagsString + SEUserTags[i]["name"] + ";";
 	}
-	SETagsString = SETagsString + SEUserTags[i]["name"] + ";"
+	tagsString = SETagsString + SEUserTags[i]["name"];
+
+	return tagsString;
 }
 
 function seUserTopTagsCallback(){
@@ -82,8 +83,11 @@ function seUserTopTagsCallback(){
     // Parse the JSON Array String to Objects
     SEUserTags.length = 0;
     SEUserTags = JSON.parse(jsonTags)
-    testDisplayTags();
-    generateTagsString
+    
+    var strings = generateTagsString()
+    var APICALL = APICallTagInfo.replace("$TAG", strings)
+
+    console.log("XX> " + APICALL)
 }
 
  // function stackCallback(){

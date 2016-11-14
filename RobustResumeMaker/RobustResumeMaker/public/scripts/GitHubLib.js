@@ -9,6 +9,9 @@ function reqListener(){
     console.log(response);
 
         document.getElementById("ghUserInfo").innerHTML = response["name"];
+        document.getElementById("ghName").innerHTML = " <a href=\"" + response["html_url"] + "\"> "+
+            response["name"] + "'s Profile</a>";
+
         document.getElementById("userloc").innerHTML = response["location"];
 
         getrepos(response["subscriptions_url"]);
@@ -17,7 +20,6 @@ function reqListener(){
 function  getFirstName() {
     document.getElementById("userDR").style.display = 'block';
     document.getElementById("tellUsMore").style.display = 'none';
-    getDataFromStack();
     var ghUserID = document.getElementById("ghUserID").value;
     var soUserID = document.getElementById("soUserID").value;
 
@@ -33,7 +35,7 @@ function  getFirstName() {
 }
 
 function showQRcode(url){
-    document.getElementById("qr").innerHTML ="<img src=\"" + url +"\">"
+    document.getElementById("qr").innerHTML ="<img src=\"" + url +"\">";
 }
 
 function find(){

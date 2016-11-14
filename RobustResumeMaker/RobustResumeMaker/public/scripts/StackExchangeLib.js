@@ -94,7 +94,7 @@ function seUserTopTagsCallback(){
 
     // Generate the information for the rest of the TAGS
     getResponseFromStackExchange(APICALL, function(){
-        var response = this.responseText;
+        var response = JSON.parse(this.responseText);
         var popularTags = response["items"];
 
         SETagsPopular.length = 0;        

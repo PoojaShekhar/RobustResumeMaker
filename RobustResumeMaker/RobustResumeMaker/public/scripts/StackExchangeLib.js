@@ -4,6 +4,7 @@ var SESite = 'stackoverflow';
 var RESTVerification = '?site=' + SESite +'&key=' + SEKey;
 var RESTHeader = "https://api.stackexchange.com/2.2/";
 var SEUserTags = []
+var SETagsPopular = [];
 
 
 // Since this call does not requiere the user ID, we can put it here
@@ -83,12 +84,26 @@ function seUserTopTagsCallback(){
 
     // Parse the JSON Array String to Objects
     SEUserTags.length = 0;
-    SEUserTags = JSON.parse(jsonTags)
+    SEUserTags = JSON.parse(jsonTags);
     
-    var strings = generateTagsString()
-    var APICALL = APICallTagInfo.replace("$TAG", strings)
+    var strings = generateTagsString();
+    var APICALL = APICallTagInfo.replace("$TAG", strings);
 
-    console.log("XX> " + APICALL)
+    // Generate the information for the rest of the TAGS
+    getResponseFromStackExchange(APICALL, function(){
+        var response = this.responseText;
+        var popularTags = response["items"];
+
+        SETagsPopular.length = 0;        
+        var i = 0
+        for(i = 0; i < popularTags.length; i++){
+            SETagsPopular.push(popularTags[i]["name"] + "," + popularTags[i]["count"]);
+        }
+
+        console.log(SETagsPopular);
+    });
+
+
 }
 
  // function stackCallback(){

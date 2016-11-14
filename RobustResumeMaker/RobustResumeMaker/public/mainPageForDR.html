@@ -86,6 +86,7 @@ function collectProfilesData(profiles) {
     member = profiles.values[0];
     dataJ=JSON.stringify(member);
     console.log(dataJ)
+    document.getElementById("Name").innerHTML = member.firstName + " " + member.lastName
     document.getElementById("lblName").innerHTML = member.firstName + " " + member.lastName
     document.getElementById("lblLocation").innerHTML= member.location.name
     document.getElementById("lblPosition0").innerHTML= member["positions"]["values"][0]["company"]["name"]
@@ -93,6 +94,9 @@ function collectProfilesData(profiles) {
     document.getElementById("lblSummary").innerHTML = member["positions"]["values"][0]["summary"];
     //console.log(member["positions"]["values"][0]["company"]["name"])
     document.getElementById("lblEmail").innerHTML = member.emailAddress;
+    document.getElementById("lblProfile").innerHTML = member.publicProfileUrl;			
+    document.getElementById("imageid").src=member.pictureUrl;			
+    document.getElementById("lblHeadline").innerHTML= member.headline
     document.getElementById("lblProfile").innerHTML = " <u><a href=\"" + member.publicProfileUrl + "\"> Here</a></u>";
 }
 </script>
@@ -234,21 +238,20 @@ function collectProfilesData(profiles) {
                     <div class="row nopadding ident ui-bg-color01">
                         <!-- Photo -->
                         <a href="#!">
-                            <div class="col-md-5 col-lg-4 vc-photo">&nbsp;</div>
+                            <div class="col-md-5 col-lg-4"><img src="../logo.png" id="imageid" style="width:200px;height:150px" /></div>
                         </a>
                         <!-- /Photo -->
                         <div class="col-md-7 col-lg-8 vc-name nopadding">
                             <!-- Name-Position -->
                             <div class="row nopadding name">
-                                <div class="col-md-10 name-title"><h2 id="ghUserInfo" class="font-accident-two-light uppercase"></h2></div>
+                                <div class="col-md-10 name-title"><h2 id="ghUserInfo" class="font-accident-two-light uppercase"><label id="Name" /></h2></div>
 
                             </div>
                             <div class="row nopadding position">
                                 <div class="col-md-10 position-title">
 
                                     <section class="cd-intro">
-                                        <h4 id="userloc" class="cd-headline clip is-full-width font-accident-two-normal uppercase">
-                                        </h4>
+                                        <h4 id="userloc" class="cd-headline clip is-full-width font-accident-two-light uppercase"></h4>
                                     </section>
 
                                 </div>

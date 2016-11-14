@@ -1,2 +1,4 @@
 C:\Users\Pooja Shekhar\Desktop\RobustResumeMaker\RobustResumeMaker\RobustResumeMaker\obj\Debug\RobustResumeMaker.njsprojResolveAssemblyReference.cache
 C:\Users\Pooja Shekhar\Desktop\RobustResumeMaker\RobustResumeMaker\RobustResumeMaker\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\Pooja Shekhar\Videos\RobustResumeMaker\RobustResumeMaker\RobustResumeMaker\obj\Debug\RobustResumeMaker.njsprojResolveAssemblyReference.cache
+C:\Users\Pooja Shekhar\Videos\RobustResumeMaker\RobustResumeMaker\RobustResumeMaker\bin\Microsoft.NodejsTools.WebRole.dll

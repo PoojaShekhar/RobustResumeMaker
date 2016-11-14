@@ -86,6 +86,7 @@ function collectProfilesData(profiles) {
     member = profiles.values[0];
     dataJ=JSON.stringify(member);
     console.log(dataJ)
+    document.getElementById("Name").innerHTML = member.firstName + " " + member.lastName
     document.getElementById("lblName").innerHTML = member.firstName + " " + member.lastName
     document.getElementById("lblLocation").innerHTML= member.location.name
     document.getElementById("lblPosition0").innerHTML= member["positions"]["values"][0]["company"]["name"]
@@ -93,7 +94,16 @@ function collectProfilesData(profiles) {
     document.getElementById("lblSummary").innerHTML = member["positions"]["values"][0]["summary"];
     //console.log(member["positions"]["values"][0]["company"]["name"])
     document.getElementById("lblEmail").innerHTML = member.emailAddress;
+
+    document.getElementById("lblProfile").innerHTML = member.publicProfileUrl;
+    document.getElementById("imageid").src=member.pictureUrl;
+    
+
+    document.getElementById("lblHeadline").innerHTML= member.headline
+
+
     document.getElementById("lblProfile").innerHTML = " <u><a href=\"" + member.publicProfileUrl + "\"> Here</a></u>";
+
 }
 </script>
 
@@ -230,31 +240,34 @@ function collectProfilesData(profiles) {
 
             <header>
 
-                <section class="container-fluid nopadding">
+                <section id="top-nav" class="container-fluid nopadding">
                     <div class="row nopadding ident ui-bg-color01">
                         <!-- Photo -->
                         <a href="#!">
-                            <div class="col-md-5 col-lg-4 vc-photo">&nbsp;</div>
+                            <div class="col-md-5 col-lg-4"><img src="../logo.png" id="imageid" style="width:200px;height:150px"/></div>
                         </a>
                         <!-- /Photo -->
                         <div class="col-md-7 col-lg-8 vc-name nopadding">
                             <!-- Name-Position -->
                             <div class="row nopadding name">
-                                <div class="col-md-10 name-title"><h2 id="ghUserInfo" class="font-accident-two-light uppercase"></h2></div>
-
+                                <div class="col-md-10 name-title"><h2 class="font-accident-two-light uppercase"><label id="Name" /></h2></div>
+                                
                             </div>
-                            <div class="row nopadding position">
-                                <div class="col-md-10 position-title">
+                            <div class="row">
+                                <div class="col-md-20 position-title">
 
                                     <section class="cd-intro">
-                                        <h4 id="userloc" class="cd-headline clip is-full-width font-accident-two-normal uppercase">
+                                        <h4 class="cd-headline clip is-full-width font-accident-two-normal uppercase">
+                                            
+                                            
+                                                <b><label id="lblProfile1"/></b>
+
+                                            
                                         </h4>
                                     </section>
 
                                 </div>
                             </div>
-                            <!-- /Name-Position -->
-
                         </div>
                     </div>
                 </section>
@@ -348,7 +361,9 @@ function collectProfilesData(profiles) {
                                         <div class="two"><p class="small"><label id="lblLocation"/></p></div>
                                     </div>
                                     <div class="fullwidth box">
+
                                         <div class="one"><p class="small uppercase">Current Affiliation</p></div>
+
                                         <div class="two"><p class="small"><label id="lblPosition0"/></p></div>
                                     </div>
                                     <div class="fullwidth box">

@@ -8,8 +8,6 @@ var SEUserTags = []
 function getDataFromStack(){
 	var stackUserId = document.getElementById('soUserID').value;
 
-	console.log(">>> USERID: " + stackUserId);
-
 	var APICallUserInfo = RESTHeader + 'users/' + stackUserId + RESTVerification;
 	var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/tags' + RESTVerification + '&order=desc&sort=popular';
 	var APICallTagInfo = RESTHeader + 'tags/$TAG/info?order=desc&sort=popular&site=stackoverflow';
@@ -38,11 +36,12 @@ function seUserInfoCallback(){
     var seUserBadgeGold = badges["gold"];
 
     // Here you populate the components instead of writing to the console
-    console.log(">>> USER INFO");
-    console.log(">>> Rep: " + seUserReputation);
-    console.log(">>> Gold: " + seUserBadgeGold);
-    console.log(">>> Silver: " + seUserBadgeSilver);
-    console.log(">>> Bronze: " + seUserBadgeBronze);
+    //use this id="badgeInfo"
+    document.getElementById("repu").innerHTML = seUserReputation+" Reputation";
+    document.getElementById("gold").innerHTML = "Gold <span class=\"badge\">"+seUserBadgeGold+"</span>";
+    document.getElementById("silver").innerHTML = "Silver <span class=\"badge\">"+seUserBadgeSilver+"</span>";
+    document.getElementById("bronze").innerHTML = "Bronze <span class=\"badge\">"+seUserBadgeBronze+"</span>";
+
 
 }
 

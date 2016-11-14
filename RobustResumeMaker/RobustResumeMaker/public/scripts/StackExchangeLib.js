@@ -53,8 +53,16 @@ function seUserTopTagsCallback(){
 // Since this call does not requiere the user ID, we can put it here
 var APICallTagInfo = RESTHeader + 'tags/$TAG/info?order=desc&sort=popular&site=stackoverflow';
 
-function getDataFromStack(){
-	var stackUserId = document.getElementById('soUserID').value;
+function getDataFromStack(stackUserIdM){
+    var stackUserId = ""
+
+    if(stackUserIdM == ""){
+        stackUserId = document.getElementById('soUserID').value;
+    }
+    else{
+        stackUserId = stackUserIdM;
+    }
+
     if (stackUserId!=""){
         document.getElementById("soName").innerHTML = " <a href=\"http://stackoverflow.com/u/"
             + stackUserId + "\"> My StackExchange Profile</a>";
@@ -66,7 +74,7 @@ function getDataFromStack(){
         getResponseFromStackExchange(APICAllTopTags, seUserTopTagsCallback);
     }
 
-
+    
 }
 
 function getResponseFromStackExchange (APICall, callback){

@@ -50,6 +50,7 @@
             background: #666666 url("../assets/custom/images/preloader.gif") no-repeat center center; }
     </style>
     <script src="scripts/GitHubLib.js"></script>
+
     <script type="text/javascript" src="http://platform.linkedin.com/in.js">
         api_key: 788mmi3lsbxzk2
         authorize: true
@@ -82,9 +83,13 @@ function collectProfilesData(profiles) {
 }
 </script>
 
+    <script src="scripts/StackExchangeLib.js"></script>
+
+
 </head>
 
-<body class="boxed">
+<!--if I want to pass info onload="find('SamaaG')"-->
+<body class="boxed" onload="find()">
 
 <!--Pre-Loader-->
 <div id="preloader"></div>
@@ -131,10 +136,10 @@ function collectProfilesData(profiles) {
 
     <section id="homesection" class="container-fluid nopadding">
 
-        <div class="m-details row nopadding bg-color01">
+        <div class="m-details row nopadding bg-color01" >
 
 
-                <div class="padding-50 wow fadeInDown" data-wow-delay="0.2s" data-wow-offset="10">
+                <div id="tellUsMore" class="padding-50 wow fadeInDown" data-wow-delay="0.2s" data-wow-offset="10">
                     <div class="row nopadding">
                         <div class="col-md-12 nopadding">
                             <h3 class="font-accident-two-normal uppercase">Tell us more about you!</h3>
@@ -191,7 +196,9 @@ function collectProfilesData(profiles) {
                         </div>
                     </div>
                     <div class="col-md-3 col-md-offset-5">
-                        <button type="button" class="btn btn-warning" onclick="getFirstName()">
+
+                        <button type="button" class="btn btn-warning btn-default btn-wh-trans btn-lg" onclick="getFirstName();getDataFromStack()">
+
                             <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Ready!
                         </button>
                     </div>
@@ -334,38 +341,11 @@ function collectProfilesData(profiles) {
 
                         <div class="col-md-4 pro-experience nopadding">
                             <div class="padding-50 wow fadeInRight" data-wow-delay="0.6s" data-wow-offset="5">
-                                <h3 class="font-accident-two-normal uppercase">Pro. Experience</h3>
+                                <h3 id="shareqr" class="font-accident-two-normal uppercase">{Share} your D.R.</h3>
                                 <div class="dividewhite4"></div>
-                                <div class="experience">
-                                    <ul class="">
-                                        <li class="date">02/2008 - 04/2010</li>
-                                        <li class="company uppercase">
-                                            <a>
-                                                ABC Brodcast Inc. New York.
-                                            </a>
-                                        </li>
-                                        <li class="position">Junior Designer</li>
-                                    </ul>
-                                    <ul class="">
-                                        <li class="date">04/2010 - 06/2012</li>
-                                        <li class="company uppercase">
-                                            <a>
-                                                Leo Burnett London Office
-                                            </a>
-                                        </li>
-                                        <li class="position">Senior Designer</li>
-                                    </ul>
-                                    <ul class="">
-                                        <li class="date">06/2012 - present</li>
-                                        <li class="company uppercase">
-                                            <a>
-                                                Google Inc. Dublin.
-                                            </a>
-                                        </li>
-                                        <li class="position">UI/UX Designer</li>
-                                    </ul>
-                                </div>
-                                <a href="#!" class="btn btn-wh-trans btn-xs">Learn More</a>
+
+                                <div id="qr"></div>
+
                                 <div class="dividewhite1"></div>
                             </div>
                         </div>
@@ -420,54 +400,6 @@ function collectProfilesData(profiles) {
                 </section>
 
             </div>
-
-            <footer class="padding-50 ui-bg-color02">
-                <div class="container-fluid nopadding">
-                    <div class="row wow fadeInDown" data-wow-delay=".2s" data-wow-offset="10">
-                        <div class="col-md-3">
-                            <h4 class="font-accident-two-normal uppercase">Samuel Anderson</h4>
-                            <p class="inline-block">
-                                Quality Web Design, Ui / UX Design. Part-time or Fulltime.
-                            </p>
-                            <div class="divider-dynamic"></div>
-                        </div>
-                        <div class="col-md-3 cv-link">
-                            <h4 class="font-accident-two-normal uppercase">Download cv</h4>
-                            <div class="dividewhite1"></div>
-                            <a href="#!"><i class="fa fa-long-arrow-down" aria-hidden="true"></i>English</a>
-                            <a href="#!"><i class="fa fa-long-arrow-down" aria-hidden="true"></i>German</a>
-                            <a href="#!"><i class="fa fa-long-arrow-down" aria-hidden="true"></i>Spanish</a>
-                            <div class="divider-dynamic"></div>
-                        </div>
-                        <div class="col-md-3">
-                            <h4 class="font-accident-two-normal uppercase">Newsletter</h4>
-                            <div class="dividewhite1"></div>
-                            <input class="newsletter-email" type="email" required="" name="ne" placeholder="Your Email">
-                            <!--<p>Lorem ipsum dolor sit amet...</p>-->
-                            <div class="divider-dynamic"></div>
-                        </div>
-                        <div class="col-md-3">
-                            <h4 class="font-accident-two-normal uppercase">Follow me</h4>
-                            <div class="follow">
-                                <ul class="list-inline social">
-                                    <li><a target="_blank" href="#" class="rst-icon-facebook"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a target="_blank" href="#" class="rst-icon-twitter"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a target="_blank" href="#" class="rst-icon-pinterest"><i class="fa fa-pinterest"></i></a></li>
-                                    <li><a target="_blank" href="#" class="rst-icon-instagram"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a target="_blank" href="#" class="rst-icon-youtube"><i class="fa fa-youtube"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="divider-dynamic"></div>
-                        </div>
-                    </div>
-                    <div class="dividewhite1"></div>
-                    <div class="row wow fadeInDown" data-wow-delay=".4s" data-wow-offset="10">
-                        <div class="col-md-12 copyrights">
-                            <p>© 2016 Samuel Anderson.</p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
         <!-- crazy idae ends here-->
     </section>

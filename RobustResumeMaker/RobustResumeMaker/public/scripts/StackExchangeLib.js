@@ -3,18 +3,19 @@ var SEKey = 'QZM9sJ9hrP4Fj1a3GF4FzQ((';
 var SESite = 'stackoverflow';
 var RESTVerification = '?site=' + SESite +'&key=' + SEKey;
 var RESTHeader = "https://api.stackexchange.com/2.2/";
+var SEUserTags = []
 
 function getDataFromStack(){
-	var stackUserId = document.getElementById('txtStackId').value;
+	var stackUserId = document.getElementById('soUserID').value;
 
 	console.log(">>> USERID: " + stackUserId);
 
 	var APICallUserInfo = RESTHeader + 'users/' + stackUserId + RESTVerification;
-	var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/top-tags' + RESTVerification;
+	var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/tags' + RESTVerification + '&order=desc&sort=popular';
 	var APICallTagInfo = RESTHeader + 'tags/$TAG/info?order=desc&sort=popular&site=stackoverflow';
 
 	getResponseFromStackExchange(APICallUserInfo, seUserInfoCallback);
-	getResponseFromStackExchange(APICAllTopTags, seUserTopTagsCallback)
+	getResponseFromStackExchange(APICAllTopTags, seUserTopTagsCallback);
 
 }
 
@@ -29,37 +30,46 @@ function getResponseFromStackExchange (APICall, callback){
 function seUserInfoCallback(){
     var response = JSON.parse(this.responseText);
 
-    var badges = response["items"][0]["badge_counts"]
+    var badges = response["items"][0]["badge_counts"];
 
-    var seUserReputation = response["items"][0]["reputation"]
-    var seUserBadgeBronze = badges["bronze"]
-    var seUserBadgeSilver = badges["silver"]
-    var seUserBadgeGold = badges["gold"]
+    var seUserReputation = response["items"][0]["reputation"];
+    var seUserBadgeBronze = badges["bronze"];
+    var seUserBadgeSilver = badges["silver"];
+    var seUserBadgeGold = badges["gold"];
 
     // Here you populate the components instead of writing to the console
-    console.log(">>> USER INFO")
-    console.log(">>> Rep: " + seUserReputation)
-    console.log(">>> Gold: " + seUserBadgeGold)
-    console.log(">>> Silver: " + seUserBadgeSilver)
-    console.log(">>> Bronze: " + seUserBadgeBronze)
+    console.log(">>> USER INFO");
+    console.log(">>> Rep: " + seUserReputation);
+    console.log(">>> Gold: " + seUserBadgeGold);
+    console.log(">>> Silver: " + seUserBadgeSilver);
+    console.log(">>> Bronze: " + seUserBadgeBronze);
 
+}
+
+function testDisplayTags(){
+	for(var i = 0; i < SEUserTags.length; i++){
+		console.log("### " + SEUserTags[i]["name"] + "  " + SEUserTags[i]["count"]);
+	}
 }
 
 function seUserTopTagsCallback(){
     var response = JSON.parse(this.responseText);
 
-    var jsonTags = "["
-    var tags = response["items"]
-    var i = 0
-    for(i = 0; tags.length -1; i++){
-    	jsonTags += "{'name':" + tags[i]["name"] + ",'count':" + tags[i]["count"] +"},"
+	var tags = response["items"];
+    
+    // Save everything in a JSON Array
+    var i = 0;
+    var jsonTags = '[';
+    for(i = 0; i < tags.length -1; i++){
+    	jsonTags = jsonTags + '{"name":"' + tags[i]["name"] + '","count":"' + tags[i]["count"] +'"},';
     }
-    jsonTags += "{'name':" + tags[i]["name"] + ",'count':" + tags[i]["count"] +"}]"
+    jsonTags = jsonTags + '{"name":"' + tags[i]["name"] + '","count":"' + tags[i]["count"] +'"}]';
 
-    var test = JSON.parse(jsonTags)
-    for(tag in test){
-    	console.log(">>> TAG: " + tag["name"] + " COUNT: " + tag["count"])
-    }
+    // Parse the JSON Array String to Objects
+    SEUserTags.length = 0;
+    SEUserTags = JSON.parse(jsonTags)
+
+    testDisplayTags();
 }
 
  // function stackCallback(){

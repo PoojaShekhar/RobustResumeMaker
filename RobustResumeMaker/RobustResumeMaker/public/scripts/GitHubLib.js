@@ -141,5 +141,12 @@ function repoListener(){
             + " <a href=\"" + response[i]["html_url"] + "\"> " + response[i]["name"] + "</a>"+ "</br>";
     }
 
+    stringLang = 
+    "<span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span> "+ " <a href=#>Java</a>"+ "</br>" +
+    "<span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span> "+ " <a href=#>Javascript</a>"+ "</br>" +
+    "<span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span> "+ " <a href=#>Scala</a>"+ "</br>" +
+    "<span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span> "+ " <a href=#>Apache-Spark</a>"+ "</br>";
+
     document.getElementById("repoInfo").innerHTML = string
+    document.getElementById("langInfo").innerHTML = stringLang
 }

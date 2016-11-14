@@ -32,6 +32,8 @@ function getFirstName() {
 
     getResponseFromGitHub(ghUserID);
 
+    GitUserLanguages.length = 0;
+    getLanguagesFunc(ghUserID)
 
 }
 
@@ -73,11 +75,11 @@ function getResponseFromGitHub (info){
 
     // Send it
     request.send();
+}
 
-    var repAPIcall = "https://api.github.com/users/" + info+"/repos";
+function getLanguagesFunc(githubId){
+    var repAPIcall = "https://api.github.com/users/" + githubId+"/repos";
     var repRequest = new XMLHttpRequest();
-
-    // Initialize a request
 
     repRequest.addEventListener("load", reqLangListener);
     repRequest.open("get", repAPIcall, true);
@@ -89,8 +91,6 @@ function getResponseFromGitHub (info){
 
 
 function reqLangListener() {
-    GitUserLanguages.length = 0;
-
     var responseLang = JSON.parse(this.responseText);
 
     for(var i = 0; i < responseLang.length; i++){
@@ -101,7 +101,7 @@ function reqLangListener() {
         newReq.open("get",responseLang[0]["languages_url"], true );
         newReq.send();
     }
-    printAllLanguages();   
+    
 }
 
 function printAllLanguages(){

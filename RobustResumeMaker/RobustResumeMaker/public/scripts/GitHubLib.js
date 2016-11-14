@@ -57,7 +57,7 @@ function find(){
         document.getElementById("userDR").style.display = 'block';
         document.getElementById("tellUsMore").style.display = 'none';
         document.getElementById("qr").style.display = 'none';
-        document.getElementById("shareqr").innerHTML = '{Thank} you for visiting';
+        document.getElementById("shareqr").innerHTML = '{Thank} you for visiting my D.R.';
 
 
         getResponseFromGitHub(info1);

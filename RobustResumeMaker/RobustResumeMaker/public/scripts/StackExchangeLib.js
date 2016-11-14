@@ -4,6 +4,7 @@ var SESite = 'stackoverflow';
 var RESTVerification = '?site=' + SESite +'&key=' + SEKey;
 var RESTHeader = "https://api.stackexchange.com/2.2/";
 var SEUserTags = []
+var SETagsPopular = [];
 
 
 

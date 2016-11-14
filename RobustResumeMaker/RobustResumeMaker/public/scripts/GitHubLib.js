@@ -18,7 +18,7 @@ function reqListener(){
         getrepos(response["subscriptions_url"]);
  }
 
-function  getFirstName() {
+function getFirstName() {
     document.getElementById("userDR").style.display = 'block';
     document.getElementById("tellUsMore").style.display = 'none';
     var ghUserID = document.getElementById("ghUserID").value;
@@ -90,10 +90,12 @@ function getResponseFromGitHub (info){
 
 
 function reqLangListener() {
+    GitUserLanguages.length = 0;
+
     var responseLang = JSON.parse(this.responseText);
-    var 
+
     for(var i = 0; i < responseLang.length; i++){
-        var langURL = responseLang[i]["languages_url"]
+        var langURL = responseLang[i]["languages_url"];
 
         var newReq = new XMLHttpRequest();
         newReq.addEventListener( "load", getLanguages);

@@ -97,7 +97,7 @@ function reqLangListener() {
         var langURL = responseLang[i]["languages_url"];
 
         var newReq = new XMLHttpRequest();
-        newReq.addEventListener( "load", getLanguages(printAllLanguages));
+        newReq.addEventListener( "load", getLanguages);
         newReq.open("get",responseLang[0]["languages_url"], true );
         newReq.send();
     }
@@ -110,12 +110,12 @@ function printAllLanguages(){
     }
 }
 
-function  getLanguages(cb) {
+function getLanguages() {
     var responseLang = JSON.parse(this.responseText);
-    for (i=0;  i<Object.keys(responseLang).length; i++) {
+    for (var i=0;  i<Object.keys(responseLang).length; i++) {
         GitUserLanguages.push(Object.keys(responseLang)[i]);
     }
-    cb();
+    
 }
 
 function getrepos(reposURL) {
@@ -133,7 +133,7 @@ function getrepos(reposURL) {
 
 function repoListener(){
     var response = JSON.parse(this.responseText);
-    console.log(response);
+    
     var string = "";
     for (i = 0; i < response.length; i++) {
         string = string +

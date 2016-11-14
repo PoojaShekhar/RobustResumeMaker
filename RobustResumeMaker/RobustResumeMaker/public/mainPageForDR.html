@@ -24,7 +24,19 @@
     <link href="./assets/custom/css/style.css"                          property='stylesheet' rel="stylesheet" type="text/css" media="screen"/>
 
     <style>
+        .repu{
+            font-size: 20px;
+        }
 
+        .gold{
+            color: goldenrod;
+        }
+        .silver{
+            color: silver;
+        }
+        .bronze{
+            color: saddlebrown;
+        }
         .glyphicon-align-justify {
             font-size: 40px;
             color: lightgrey;
@@ -197,7 +209,9 @@ function collectProfilesData(profiles) {
                     </div>
                     <div class="col-md-3 col-md-offset-5">
 
-                        <button type="button" class="btn btn-warning " onclick="getFirstName();getDataFromStack()">
+
+                 
+                        <button type="button" class="btn btn-warning" onclick="getFirstName();getDataFromStack()">
 
                             <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Ready!
                         </button>
@@ -270,20 +284,36 @@ function collectProfilesData(profiles) {
 
                                                 <div class="tab-content ">
                                                     <div class="tab-pane active" id="1">
+                                                        <div class="dividewhite1"></div>
+                                                            <h3 class="font-accident-two-normal" id="ghName"></h3>
                                                         <div class="col-md-6">
-                                                            <h5 class="font-accident-one-bold subtitle">My GitHub Repositories</h5>
                                                             <div class="dividewhite1"></div>
+                                                            <h5 class="font-accident-one-bold subtitle">My GitHub Repositories</h5>
                                                             <p id="repoInfo" class="small">
-                                                                <!--Customize your website as you want using different colors and 100% free fonts.-->
                                                             </p>
                                                         </div>
                                                         <div class="col-md-6">
+                                                            <div class="dividewhite1"></div>
                                                             <h5 class="font-accident-one-bold subtitle">My Languages</h5>
 
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane" id="2">
-                                                        <h3>stackoverflow info</h3>
+                                                        <div class="col-md-6">
+                                                            <div class="dividewhite1"></div>
+                                                            <h5 class="font-accident-one-bold subtitle">My badges</h5>
+                                                            <p id="badgeInfo" class="small">
+                                                                <div class="repu" id="repu"></div>
+                                                                <div class="gold" id="gold"></div>
+                                                                <div class="silver" id="silver"></div>
+                                                                <div class="bronze" id="bronze"></div>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="dividewhite1"></div>
+                                                            <h5 class="font-accident-one-bold subtitle">My Involvement</h5>
+
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

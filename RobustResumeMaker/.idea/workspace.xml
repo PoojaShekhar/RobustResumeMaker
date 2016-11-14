@@ -26,8 +26,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RobustResumeMaker/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1419">
-              <caret line="195" column="38" selection-start-line="195" selection-start-column="38" selection-end-line="195" selection-end-column="38" />
+            <state relative-caret-position="-264">
+              <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -36,10 +36,10 @@
       <file leaf-file-name="GitHubLib.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/GitHubLib.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+            <state relative-caret-position="264">
+              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
               <folding>
-                <marker date="1479079286458" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
+                <marker date="1479082947393" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
               </folding>
             </state>
           </provider>
@@ -48,8 +48,8 @@
       <file leaf-file-name="StackExchangeLib.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="8" column="57" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="57" />
+            <state relative-caret-position="-1934">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -58,10 +58,12 @@
       <file leaf-file-name="mainPageForDR.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/mainPageForDR.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="160" column="30" selection-start-line="160" selection-start-column="30" selection-end-line="160" selection-end-column="30" />
+            <state relative-caret-position="1406">
+              <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#9911#9917#1" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#5;n#div#1;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,8 +98,9 @@
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/index.html" />
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/blank.html" />
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/masterpiece.html" />
-        <option value="$PROJECT_DIR$/RobustResumeMaker/public/mainPageForDR.html" />
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/scripts/GitHubLib.js" />
+        <option value="$PROJECT_DIR$/RobustResumeMaker/public/mainPageForDR.html" />
+        <option value="$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js" />
       </list>
     </option>
   </component>
@@ -298,12 +301,12 @@
       <workItem from="1478974962066" duration="6655000" />
       <workItem from="1478987017497" duration="8019000" />
       <workItem from="1479053428736" duration="409000" />
-      <workItem from="1479054612842" duration="21579000" />
+      <workItem from="1479054612842" duration="25073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36662000" />
+    <option name="totallyTimeSpent" value="40156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2324" y="-2576" width="3232" height="2492" extended-state="6" />
@@ -356,7 +359,7 @@
         <state relative-caret-position="792">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <marker date="1479079286458" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
+            <marker date="1479082947393" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
           </folding>
         </state>
       </provider>
@@ -398,7 +401,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479079286458" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
+            <marker date="1479082947393" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
           </folding>
         </state>
       </provider>
@@ -432,7 +435,7 @@
         <state relative-caret-position="396">
           <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
           <folding>
-            <marker date="1479079286458" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
+            <marker date="1479082947393" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
           </folding>
         </state>
       </provider>
@@ -524,36 +527,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RobustResumeMaker/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1419">
-          <caret line="195" column="38" selection-start-line="195" selection-start-column="38" selection-end-line="195" selection-end-column="38" />
+        <state relative-caret-position="-264">
+          <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/GitHubLib.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        <state relative-caret-position="264">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
           <folding>
-            <marker date="1479079286458" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
+            <marker date="1479082947393" expanded="false" signature="0:41" ph="/** Created by monica on 11/12/16. ...*/" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/mainPageForDR.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="160" column="30" selection-start-line="160" selection-start-column="30" selection-end-line="160" selection-end-column="30" />
+        <state relative-caret-position="1406">
+          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#9911#9917#1" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#5;n#div#1;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="8" column="57" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="57" />
+        <state relative-caret-position="-1934">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>

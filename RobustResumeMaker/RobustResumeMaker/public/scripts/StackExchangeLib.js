@@ -5,15 +5,19 @@ var RESTVerification = '?site=' + SESite +'&key=' + SEKey;
 var RESTHeader = "https://api.stackexchange.com/2.2/";
 var SEUserTags = []
 
+
+// Since this call does not requiere the user ID, we can put it here
+var APICallTagInfo = RESTHeader + 'tags/$TAG/info?order=desc&sort=popular&site=stackoverflow';
+
 function getDataFromStack(){
 	var stackUserId = document.getElementById('soUserID').value;
 
 	console.log(">>> USERID: " + stackUserId);
+	console.log(">>> USERP: http://stackoverflow.com/u/" + stackUserId)
 
 	var APICallUserInfo = RESTHeader + 'users/' + stackUserId + RESTVerification;
 	var APICAllTopTags = RESTHeader + 'users/' + stackUserId + '/tags' + RESTVerification + '&order=desc&sort=popular';
-	var APICallTagInfo = RESTHeader + 'tags/$TAG/info?order=desc&sort=popular&site=stackoverflow';
-
+	
 	getResponseFromStackExchange(APICallUserInfo, seUserInfoCallback);
 	getResponseFromStackExchange(APICAllTopTags, seUserTopTagsCallback);
 
@@ -38,11 +42,12 @@ function seUserInfoCallback(){
     var seUserBadgeGold = badges["gold"];
 
     // Here you populate the components instead of writing to the console
-    console.log(">>> USER INFO");
-    console.log(">>> Rep: " + seUserReputation);
-    console.log(">>> Gold: " + seUserBadgeGold);
-    console.log(">>> Silver: " + seUserBadgeSilver);
-    console.log(">>> Bronze: " + seUserBadgeBronze);
+    //use this id="badgeInfo"
+    document.getElementById("repu").innerHTML = seUserReputation+" Reputation";
+    document.getElementById("gold").innerHTML = "Gold <span class=\"badge\">"+seUserBadgeGold+"</span>";
+    document.getElementById("silver").innerHTML = "Silver <span class=\"badge\">"+seUserBadgeSilver+"</span>";
+    document.getElementById("bronze").innerHTML = "Bronze <span class=\"badge\">"+seUserBadgeBronze+"</span>";
+
 
 }
 
@@ -50,6 +55,16 @@ function testDisplayTags(){
 	for(var i = 0; i < SEUserTags.length; i++){
 		console.log("### " + SEUserTags[i]["name"] + "  " + SEUserTags[i]["count"]);
 	}
+}
+
+function generateTagsString(){
+	var SETagsString = ""
+	
+	var i = 0
+	for(i = 0; i < SEUserTags.length - 1; i++) {
+		SETagsString = SETagsString + SEUserTags[i]["name"] + ";"
+	}
+	SETagsString = SETagsString + SEUserTags[i]["name"] + ";"
 }
 
 function seUserTopTagsCallback(){
@@ -68,8 +83,8 @@ function seUserTopTagsCallback(){
     // Parse the JSON Array String to Objects
     SEUserTags.length = 0;
     SEUserTags = JSON.parse(jsonTags)
-
     testDisplayTags();
+    generateTagsString
 }
 
  // function stackCallback(){

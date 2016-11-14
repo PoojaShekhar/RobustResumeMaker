@@ -33,13 +33,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GitHubLib.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GitHubLib.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/GitHubLib.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1902">
-              <caret line="100" column="58" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="58" />
+            <state relative-caret-position="1023">
+              <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
               <folding>
-                <element signature="n#!!doc;n#reqListener#0" expanded="false" />
+                <element signature="e#0#41#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -48,7 +48,7 @@
       <file leaf-file-name="mainPageForDR.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/mainPageForDR.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="728">
+            <state relative-caret-position="8646">
               <caret line="316" column="80" selection-start-line="316" selection-start-column="73" selection-end-line="316" selection-end-column="80" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -59,7 +59,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StackExchangeLib.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StackExchangeLib.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1012">
@@ -88,9 +88,9 @@
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/index.html" />
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/blank.html" />
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/masterpiece.html" />
-        <option value="$PROJECT_DIR$/RobustResumeMaker/public/scripts/GitHubLib.js" />
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/mainPageForDR.html" />
         <option value="$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js" />
+        <option value="$PROJECT_DIR$/RobustResumeMaker/public/scripts/GitHubLib.js" />
       </list>
     </option>
   </component>
@@ -104,10 +104,10 @@
     <handled-path value="$PROJECT_DIR$/RobustResumeMaker/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2324" />
-    <option name="y" value="-2576" />
-    <option name="width" value="3232" />
-    <option name="height" value="2492" />
+    <option name="x" value="-16" />
+    <option name="y" value="-16" />
+    <option name="width" value="3075" />
+    <option name="height" value="1832" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -296,13 +296,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42195000" />
+    <option name="totallyTimeSpent" value="43222000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2324" y="-2576" width="3232" height="2492" extended-state="6" />
+    <frame x="-16" y="-16" width="3075" height="1832" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2334375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24548143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978252" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -349,7 +349,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc;n#reqListener#0" expanded="false" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -383,7 +383,7 @@
         <state relative-caret-position="396">
           <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
           <folding>
-            <element signature="n#!!doc;n#reqListener#0" expanded="false" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -486,7 +486,7 @@
         <state relative-caret-position="264">
           <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
           <folding>
-            <element signature="n#!!doc;n#reqListener#0" expanded="false" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -524,7 +524,7 @@
         <state relative-caret-position="792">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc;n#reqListener#0" expanded="false" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -565,7 +565,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc;n#reqListener#0" expanded="false" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -598,7 +598,7 @@
         <state relative-caret-position="396">
           <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
           <folding>
-            <element signature="n#!!doc;n#reqListener#0" expanded="false" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -689,9 +689,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1012">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/mainPageForDR.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
+        <state relative-caret-position="8646">
           <caret line="316" column="80" selection-start-line="316" selection-start-column="73" selection-end-line="316" selection-end-column="80" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -703,19 +711,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/GitHubLib.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1902">
-          <caret line="100" column="58" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="58" />
+        <state relative-caret-position="1023">
+          <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
           <folding>
-            <element signature="n#!!doc;n#reqListener#0" expanded="false" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RobustResumeMaker/public/scripts/StackExchangeLib.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

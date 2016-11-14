@@ -3,7 +3,7 @@
  */
 
 
-
+var languages="";
 function reqListener(){
      var response = JSON.parse(this.responseText);
     console.log(response);
@@ -24,7 +24,7 @@ function  getFirstName() {
     var soUserID = document.getElementById("soUserID").value;
 
     var qrcode = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl="+
-        "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:1337/mainPageForDR.html?gh="+
+        "http://cp-1.testnj.nosql-json-pg0.utah.cloudlab.us:8080/mainPageForDR.html?gh="+
         ghUserID+"%26so="+soUserID;
 
     showQRcode(qrcode);
@@ -73,6 +73,35 @@ function getResponseFromGitHub (info){
 
     // Send it
     request.send();
+
+    var repAPIcall = "https://api.github.com/users/" + info+"/repos";
+    var repRequest = new XMLHttpRequest();
+
+    // Initialize a request
+
+    repRequest.addEventListener("load", reqLangListener);
+    repRequest.open("get", repAPIcall, true);
+
+    //Send it
+    repRequest.send();
+}
+
+function reqLangListener() {
+    var responseLang = JSON.parse(this.responseText);
+    console.log( responseLang[0]["languages_url"]);
+    var newReq = new XMLHttpRequest();
+    newReq.addEventListener( "load", getLanguages);
+    newReq.open("get",responseLang[0]["languages_url"], true );
+    newReq.send();
+
+}
+
+function  getLanguages() {
+    var responseLang = JSON.parse(this.responseText);
+    for (i=0;  i<Object.keys(responseLang).length; i++) {
+        languages += Object.keys(responseLang)[i]+"\n";
+    }
+    console.log("languages>>>>" + languages);
 }
 
 function getrepos(reposURL) {
